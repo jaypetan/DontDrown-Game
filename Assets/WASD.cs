@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WASD : MonoBehaviour
 {
-    public float controlSpeed = 10;
+    public float controlSpeed = 5;
 
     public Rigidbody2D rb;
 
