@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 130902615}
   - component: {fileID: 130902614}
   - component: {fileID: 130902618}
+  - component: {fileID: 130902619}
   m_Layer: 0
   m_Name: Main Player
   m_TagString: Player
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36b11a903147cc4ab0f669de82c65d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlSpeed: 10
+  controlSpeed: 5
   rb: {fileID: 130902614}
 --- !u!212 &130902616
 SpriteRenderer:
@@ -299,6 +300,23 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &130902619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130902613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7d00ef94a70e841bef1f74c4364b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostedSpeed: 10
+  boostSlider: {fileID: 2056078414}
+  speedBoostDuration: 2
+  cooldownDuration: 2
+  playerMovementScript: {fileID: 130902615}
 --- !u!1 &143864579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,7 +2315,7 @@ GameObject:
   - component: {fileID: 1292423795}
   - component: {fileID: 1292423794}
   m_Layer: 5
-  m_Name: Press Z text
+  m_Name: Press X text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3510,7 +3528,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2056078413}
   - component: {fileID: 2056078414}
-  - component: {fileID: 2056078415}
   m_Layer: 5
   m_Name: 'Speed Boost '
   m_TagString: Untagged
@@ -3592,18 +3609,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2056078415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056078412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7d00ef94a70e841bef1f74c4364b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2067442178
 GameObject:
   m_ObjectHideFlags: 0
