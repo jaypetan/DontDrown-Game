@@ -20,10 +20,13 @@ public class Teleport : MonoBehaviour
     }
     void Update()
     {
-        if (cutsceneCamera == true && Input.GetKeyDown(KeyCode.Space))
+        if (cutsceneCamera != null && cutsceneCamera.activeSelf )
         {
-            EndCutscene();
-            skipCutscene.enabled = false;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                EndCutscene();
+                skipCutscene.enabled = false;
+            }
         }
     }
 
