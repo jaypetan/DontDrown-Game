@@ -14,11 +14,11 @@ public class SpeedBoost : MonoBehaviour
     public float cooldownDuration = 10f;
     private float cooldownTimer = 0f;
 
-    public WASD playerMovementScript;
+    public PlayerController playerMovementScript;
 
     void Start()
     {
-        playerMovementScript = GetComponent<WASD>();
+        playerMovementScript = GetComponent<PlayerController>();
 
         if (playerMovementScript == null)
         {
@@ -40,7 +40,6 @@ public class SpeedBoost : MonoBehaviour
 
         // Update the cooldown timer
         cooldownTimer = Mathf.Max(0f, cooldownTimer - Time.deltaTime);
-        Debug.Log(cooldownTimer);
 
         // Update Cooldown UI
         boostSlider.value = cooldownTimer;

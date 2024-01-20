@@ -28,7 +28,6 @@ public class gaugeController : MonoBehaviour
 
         // Update the cooldown timer
         cooldownTimer = Mathf.Max(0f, cooldownTimer - Time.deltaTime);
-        Debug.Log(cooldownTimer);
 
         // Update Cooldown UI
         cooldownSlider.value = cooldownTimer;

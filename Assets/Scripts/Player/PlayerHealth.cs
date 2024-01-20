@@ -15,15 +15,15 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void TakeDamage(int damage)
     {
         curHealth -= damage;
-        Debug.Log(curHealth);
+        Debug.Log("Health: " + curHealth);
 
-        if(curHealth <= 0)
+        if (curHealth <= 0)
         {
             Destroy(gameObject);
         }
