@@ -24,10 +24,16 @@ public class WASD : MonoBehaviour
         transform.position += move * controlSpeed * Time.deltaTime;
         Vector3 direction = move.normalized;
 
+        // keep the original facing direction
+        Vector3 currentDirection = transform.up;
+
         if (move != Vector3.zero)
         {
             transform.up = direction;
         }
+
+        // Set the facing direction back to the original direction 
+        transform.up = currentDirection;
 
     }
 }
