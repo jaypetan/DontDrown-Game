@@ -19,20 +19,21 @@ public class TouchLightRotation : MonoBehaviour
         
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
 
-        if (rotationZ < -40 || rotationZ > 40)
-        {
+        // Testing some rotation code
+        // if (rotationZ < -40 || rotationZ > 40)
+        // {
 
-            if (player.transform.eulerAngles.y == 0)
-            {
+        //     if (player.transform.eulerAngles.y == 0)
+        //     {
 
-                transform.localRotation = Quaternion.Euler(180,0,-rotationZ);
+        //         transform.localRotation = Quaternion.Euler(180,0,-rotationZ);
 
-            } else if (player.transform.eulerAngles.y == 180) 
-            {
+        //     } else if (player.transform.eulerAngles.y == 180) 
+        //     {
 
-                transform.localRotation = Quaternion.Euler(180, 180, -rotationZ);
+        //         transform.localRotation = Quaternion.Euler(180, 180, -rotationZ);
 
-            }
-        }
+        //     }
+        // }
     }
 }
