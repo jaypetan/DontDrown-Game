@@ -317,7 +317,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5663e6d991ba8a4d84fa324a692a174, type: 3}
   m_Color: {r: 1, g: 0.9797462, b: 0.6462264, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -338,7 +338,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 260966955}
@@ -380,7 +380,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 23.88, y: 16.685682}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -388,10 +388,25 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.46496856, y: 0.44547787}
-      - {x: -0.4440447, y: 0.4453453}
-      - {x: -0.4519952, y: -0.4326811}
-      - {x: 0.46399632, y: -0.43268114}
+    - - {x: 2.6095464, y: -0.26684037}
+      - {x: 2.5060363, y: 0.19777511}
+      - {x: 1.5915045, y: 0.9310096}
+      - {x: 1.1053126, y: 1.0928639}
+      - {x: 0.828013, y: 1.718881}
+      - {x: -0.0846675, y: 1.8205725}
+      - {x: -0.6117307, y: 1.7264177}
+      - {x: -1.0301054, y: 0.8841075}
+      - {x: -2.9987192, y: 0.28130254}
+      - {x: -3.5330083, y: 0.11967203}
+      - {x: -4.02559, y: 0.22310328}
+      - {x: -4.060505, y: 0.019296616}
+      - {x: -3.9921875, y: -0.18129778}
+      - {x: -3.5127292, y: -0.23564018}
+      - {x: -3.0577297, y: -0.33365056}
+      - {x: -1.9671631, y: -0.7247951}
+      - {x: -1.0246136, y: -1.2938524}
+      - {x: 0.86578226, y: -1.6216545}
+      - {x: 2.5347915, y: -0.7497407}
   m_UseDelaunayMesh: 0
 --- !u!114 &130902619
 MonoBehaviour:
@@ -422,8 +437,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ff724d2f297b14487c93acbd0ee0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  curHealth: 0
+  maxOxygen: 10
+  curOxygen: 0
+  oxygenDecreaseRate: 1
+  GaugeUI: {fileID: 651682476}
 --- !u!1 &143864579
 GameObject:
   m_ObjectHideFlags: 0
@@ -7265,7 +7282,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gaugeLevel: {fileID: 651682475}
-  depletionRate: 0.005
 --- !u!1 &668395013
 GameObject:
   m_ObjectHideFlags: 0
@@ -7321,7 +7337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gaugeLevel: {fileID: 668395016}
-  depletionRate: 0.01
 --- !u!114 &668395016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22919,8 +22934,8 @@ GameObject:
   - component: {fileID: 1643747845}
   - component: {fileID: 1643747844}
   - component: {fileID: 1643747843}
-  - component: {fileID: 1643747842}
   - component: {fileID: 1643747841}
+  - component: {fileID: 1643747847}
   m_Layer: 0
   m_Name: Eel
   m_TagString: Untagged
@@ -22944,20 +22959,6 @@ MonoBehaviour:
   speed: 400
   nextWayPointDistance: 3
   enemyGFX: {fileID: 1977723293}
---- !u!114 &1643747842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1643747840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c007db420c2d32b4a8776ae9fa0fd970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
-  playerHealth: {fileID: 130902620}
 --- !u!114 &1643747843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23074,6 +23075,19 @@ Transform:
   - {fileID: 1977723293}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1643747847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643747840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd218d0c40ea82e45b7618ea191aab33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunDuration: 4
 --- !u!1 &1649641967
 GameObject:
   m_ObjectHideFlags: 0
@@ -23633,7 +23647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  playerHealth: {fileID: 130902620}
+  playerOxygen: {fileID: 0}
 --- !u!114 &1804587966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24302,7 +24316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  playerHealth: {fileID: 130902620}
+  playerOxygen: {fileID: 130902620}
 --- !u!114 &2111058065
 MonoBehaviour:
   m_ObjectHideFlags: 0
