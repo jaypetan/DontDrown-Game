@@ -13,6 +13,7 @@ public class SpeedBoost : MonoBehaviour
 
     public float cooldownDuration = 10f;
     private float cooldownTimer = 0f;
+    private bool isOnCooldown = false;
 
     public PlayerController playerMovementScript;
 
@@ -25,6 +26,12 @@ public class SpeedBoost : MonoBehaviour
             Debug.LogError("PlayerMovement script not found!");
         }
 
+         // Initialize the slider
+        if (boostSlider != null)
+        {
+            boostSlider.maxValue = cooldownDuration;
+            boostSlider.value = 0f;
+        }
     }
 
     void Update()
@@ -32,21 +39,20 @@ public class SpeedBoost : MonoBehaviour
         // Check for the boost button input
         if (Input.GetKey(KeyCode.X) && cooldownTimer <= 0f)
         {
+            cooldownTimer = cooldownDuration;
             // Boost speed when the boost button is pressed
             StartCoroutine(ActivateSpeedBoost(boostedSpeed, speedBoostDuration));
-            cooldownTimer = cooldownDuration;
+            
         }
         
-
-        // Update the cooldown timer
-        cooldownTimer = Mathf.Max(0f, cooldownTimer - Time.deltaTime);
-
-        // Update Cooldown UI
-        boostSlider.value = cooldownTimer;
     }
-
+    
     IEnumerator ActivateSpeedBoost(float speed, float duration)
     {
+
+        // Start cooldown
+        StartCooldown();
+
         // Apply the boosted speed
         ChangeSpeed(speed);
 
@@ -55,6 +61,11 @@ public class SpeedBoost : MonoBehaviour
 
         // Reset speed after the boost duration is over
         ChangeSpeed(normalSpeed);
+
+        // End cooldown
+        EndCooldown();
+
+        cooldownTimer = 0f;
     }
 
     void ChangeSpeed(float speed)
@@ -65,5 +76,34 @@ public class SpeedBoost : MonoBehaviour
         }
     }
 
+    void StartCooldown()
+    {
+        isOnCooldown = true;
+        StartCoroutine(CooldownCountdown());
+    }
 
+    void EndCooldown()
+    {
+        isOnCooldown = false;
+        // Reset cooldown timer
+        cooldownTimer = cooldownDuration;
+        // Reset UI
+        if (boostSlider != null)
+        {
+            boostSlider.value = 0f;
+        }
+    }
+
+     IEnumerator CooldownCountdown()
+    {
+        while (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+            if (boostSlider != null)
+            {
+                boostSlider.value = cooldownDuration - cooldownTimer;
+            }
+            yield return null;
+        }
+    }
 }
