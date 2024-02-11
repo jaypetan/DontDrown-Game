@@ -11,12 +11,11 @@ public class Teleport : MonoBehaviour
     public GameObject nextGameCamera;
     public Transform teleportTarget;
 
-    [SerializeField]
-    private Text skipCutscene;
+    public GameObject skipCutscene;
 
     private void Start()
     {
-        skipCutscene.enabled = false;
+        skipCutscene.SetActive(false);
     }
     void Update()
     {
@@ -26,7 +25,7 @@ public class Teleport : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 EndCutscene();
-                skipCutscene.enabled = false;
+                skipCutscene.SetActive(false);
             }
         }
     }
@@ -48,7 +47,7 @@ public class Teleport : MonoBehaviour
         cutsceneCamera.SetActive(true);
         mainGameCamera.SetActive(false);
 
-        skipCutscene.enabled = true;
+        skipCutscene.SetActive(true);
 
     }
 

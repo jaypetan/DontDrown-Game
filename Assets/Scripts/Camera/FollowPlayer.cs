@@ -12,12 +12,19 @@ public class FollowPlayer : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = Vector3.SmoothDamp(
-            transform.position,
-            target.position + offset,
-            ref currentVelocity,
-            smoothTime
-            );
-        
+        if(target != null)
+        {
+            transform.position = Vector3.SmoothDamp(
+                transform.position,
+                target.position + offset,
+                ref currentVelocity,
+                smoothTime
+                );
+        }
+        else
+        {
+            Debug.Log("User Has Died");
+        }
+            
     }
 }
