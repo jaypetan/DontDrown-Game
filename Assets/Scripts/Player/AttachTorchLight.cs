@@ -20,7 +20,7 @@ public class AttachTorchLight : MonoBehaviour
         if (attachedObject != null)
         {
             attachedObject.parent = transform;
-            attachedObject.localPosition = new Vector3(1f, -0.5f, 0f); // Adjust the position as needed.
+            attachedObject.localPosition = new Vector3(2.6f, -0.5f, 0f); // Adjust the position as needed.
         }
     }
 }

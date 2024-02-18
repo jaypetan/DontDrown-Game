@@ -7,6 +7,7 @@ public class MonsterHealth : MonoBehaviour
 {
     [SerializeField] float health, maxHealth = 100f;
     [SerializeField] FloatingHealthBar healthBar;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class MonsterHealth : MonoBehaviour
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         healthBar = GetComponentInChildren<FloatingHealthBar>();
     }
     // Update is called once per frame
