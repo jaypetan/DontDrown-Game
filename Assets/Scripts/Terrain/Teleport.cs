@@ -41,7 +41,7 @@ public class Teleport : MonoBehaviour
     void StartCutscene()
     {
         // Disable player control
-        player.GetComponent<Rigidbody2D>().isKinematic = true;
+        Time.timeScale = 0f;
 
         // Activate cutscene camera
         cutsceneCamera.SetActive(true);
@@ -54,8 +54,7 @@ public class Teleport : MonoBehaviour
     void EndCutscene()
     {
         TeleportPlayer();
-
-        player.GetComponent<Rigidbody2D>().isKinematic = false;
+        Time.timeScale = 1f;
 
         cutsceneCamera.SetActive(false); 
         nextGameCamera.SetActive(true);
