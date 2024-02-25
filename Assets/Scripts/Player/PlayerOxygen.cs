@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerOxygen : MonoBehaviour
 {
     public int maxOxygen = 100;
-    public int curOxygen;
+    private int curOxygen;
     public int oxygenDecreaseRate = 1;
     bool oxygenDecreaseZone = true;
     float elapsed = 0f;

@@ -13,8 +13,8 @@ public class SharkAI : MonoBehaviour
     public Transform enemyGFX;
 
     Path path;
-    int currentWaypoint = 0;
-    bool reachedEndOfPath = false;
+    public int currentWaypoint = 0;
+    public bool reachedEndOfPath = false;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -24,13 +24,13 @@ public class SharkAI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-
-        InvokeRepeating("UpdatePath", 0f, .2f);
+       
+        InvokeRepeating("UpdatePath", 0f, .2f);     
     }
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (seeker.IsDone() && target != null)
         {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }
