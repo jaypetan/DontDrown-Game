@@ -6,26 +6,18 @@ using UnityEngine.UI;
 public class Teleport : MonoBehaviour
 {
     public GameObject player;
-    public GameObject cutsceneCamera;
-    public GameObject mainGameCamera;
-    public GameObject nextGameCamera;
-    public Transform teleportTarget;
+    public GameObject CutScene;
+    public Transform nextSceneTarget;
+    private bool CutSceneOn = false;
 
-    public GameObject skipCutscene;
-
-    private void Start()
-    {
-        skipCutscene.SetActive(false);
-    }
     void Update()
     {
        // Check if cutscene camera is on
-        if (cutsceneCamera != null && cutsceneCamera.activeSelf )
+        if (CutSceneOn == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 EndCutscene();
-                skipCutscene.SetActive(false);
             }
         }
     }
@@ -40,28 +32,30 @@ public class Teleport : MonoBehaviour
 
     void StartCutscene()
     {
+        TeleportPlayer(nextSceneTarget);
+        CutScene.SetActive(true);
         // Disable player control
-        Time.timeScale = 0f;
+        StartCoroutine(TimePause());
+        
 
-        // Activate cutscene camera
-        cutsceneCamera.SetActive(true);
-        mainGameCamera.SetActive(false);
-
-        skipCutscene.SetActive(true);
-
+    }
+    IEnumerator TimePause()
+    {
+        yield return new WaitForSeconds(1f);
+        CutSceneOn = true;
+        Time.timeScale = 0;
     }
 
     void EndCutscene()
     {
-        TeleportPlayer();
-        Time.timeScale = 1f;
-
-        cutsceneCamera.SetActive(false); 
-        nextGameCamera.SetActive(true);
+        TeleportPlayer(nextSceneTarget);
+        CutScene.SetActive(false);
+        CutSceneOn = false;
+        Time.timeScale = 1;
     }
 
-    void TeleportPlayer()
+    void TeleportPlayer(Transform TeleportPosition)
     {
-        player.transform.position = teleportTarget.position;
+        player.transform.position = TeleportPosition.position;
     }
 }
