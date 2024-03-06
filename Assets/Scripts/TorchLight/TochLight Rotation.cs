@@ -8,11 +8,15 @@ public class TouchLightRotation : MonoBehaviour
 
     private SpriteRotate sprite;
 
+    private void Start()
+    {
+        sprite = player.GetComponent<SpriteRotate>();
+    }
+
     private void FixedUpdate()
     {
         // Rotate angle of light
         Vector3 difference;
-        sprite = player.GetComponent<SpriteRotate>();
 
         if (sprite.facingRight == true)
         {
