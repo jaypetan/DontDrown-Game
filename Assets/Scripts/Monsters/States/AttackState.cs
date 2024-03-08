@@ -2,17 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackState : MonoBehaviour
+public class AttackState : BaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    private float losePlayerTimer = 0;
+    public float waitBeforeSearchTime = 3.0f;
+    public override void Enter()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Exit()
     {
         
+    }
+
+    public override void Perform()
+    {
+        if (enemy.CanSeePlayer())
+        {
+            losePlayerTimer = 0;
+            enemy.transform.LookAt(enemy.Player.transform);
+            enemy.Agent.SetDestination(enemy.transform.position);
+        }
+        else
+        {
+            losePlayerTimer += Time.deltaTime;
+            if(losePlayerTimer > waitBeforeSearchTime)
+            {
+                // Go back to PatrolState
+                stateMachine.ChangeState(new PatrolState());
+            }
+
+        }
     }
 }
