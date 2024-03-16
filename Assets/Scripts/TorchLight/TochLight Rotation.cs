@@ -6,11 +6,8 @@ public class TouchLightRotation : MonoBehaviour
 {
     public GameObject player;
 
-    private SpriteRotate sprite;
-
     private void Start()
     {
-        sprite = player.GetComponent<SpriteRotate>();
     }
 
     private void FixedUpdate()
@@ -18,14 +15,14 @@ public class TouchLightRotation : MonoBehaviour
         // Rotate angle of light
         Vector3 difference;
 
-        if (sprite.facingRight == true)
+        if (true)
         {
             // Debug.Log("Face Right");
             difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         }
         else
         {
-            Debug.Log("Face Left");
+            // Debug.Log("Face Left");
             difference = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
         

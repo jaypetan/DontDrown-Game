@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     public Path path;
 
     public float sightDistance = 200f;
-    public float fieldOfView = 360f;
+    public float fieldOfView = 120f;
     private void Start()
     {
         stateMachine = GetComponent<StateMachine>();
@@ -35,39 +35,50 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(CanSeePlayer());
+        // Debug.Log(CanSeePlayer());
         currentState = stateMachine.activeState.ToString();
+        CanSeePlayer();
+
+        // Force Z position to stay at a fixed value, e.g., 0
+        var position = transform.position;
+        if (position.z != 0)
+        {
+            transform.position = new Vector3(position.x, position.y, 0);
+        }
     }
 
     public bool CanSeePlayer()
     {
-        Vector3 toPlayer = player.transform.position - transform.position; // Direction to the player
-                                                                           // Convert to a 2D vector for 2D angle calculation
-        Vector2 toPlayer2D = new Vector2(toPlayer.x, toPlayer.z); // Assuming X and Z are your 2D plane
-        Vector2 forward2D = new Vector2(transform.forward.x, transform.forward.z); // Enemy's forward direction in 2D
+        Vector2 toPlayer = player.transform.position - transform.position; // 2D Direction to the player
 
-        // Check if within sight distance
-        if (toPlayer2D.magnitude <= sightDistance)
+        // Check if within sight distance using 2D distance calculation
+        if (toPlayer.magnitude <= sightDistance)
         {
-            // Calculate angle to see if within field of view
-            float angleToPlayer = Vector2.Angle(forward2D, toPlayer2D);
+            // Calculate angle to see if within field of view using transform.right as the forward vector in 2D
+            float angleToPlayer = Vector2.Angle(transform.right, toPlayer);
 
-            if (angleToPlayer <= fieldOfView / 2) // Divided by 2 because fieldOfView is the total FOV
+            if (angleToPlayer <= fieldOfView / 2) // Check if within field of view
             {
-                // Optional: Raycast to check for line of sight, ignoring obstacles
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, toPlayer.normalized, out hit, sightDistance))
+                int layerMask = 1 << LayerMask.NameToLayer("Enemy");
+                layerMask = ~layerMask;
+
+                // Cast a ray towards the player in 2D
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, toPlayer.normalized, sightDistance, layerMask);
+
+
+                if (hit.collider != null)
                 {
-                    if (hit.collider.gameObject == player)
+                    Debug.Log($"Hit: {hit.collider.gameObject.name}");
+                    if (hit.collider.CompareTag("Player"))
                     {
                         Debug.Log("Player Spotted");
-                        return true; // Player is within sight and no obstacles in between
+                        return true;
                     }
                 }
             }
         }
-        Debug.DrawRay(transform.position, toPlayer.normalized * sightDistance, Color.red);
 
+        Debug.DrawRay(transform.position, toPlayer.normalized * sightDistance, Color.red); // Use for debugging
         return false; // Player is not within sight
     }
 }

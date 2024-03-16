@@ -39,7 +39,7 @@ public class PatrolState : BaseState
             // Flip sprite by setting localScale.y to -1
             if (enemy.transform.localScale.y > 0)
             {
-                enemy.transform.localScale = new Vector3(enemy.transform.localScale.x, -enemy.transform.localScale.y, enemy.transform.localScale.z);
+                enemy.transform.localScale = new Vector3(enemy.transform.localScale.x, -enemy.transform.localScale.y, 0);
             }
         }
         else
@@ -47,11 +47,11 @@ public class PatrolState : BaseState
             // Ensure sprite is not flipped if it doesn't meet the conditions
             if (enemy.transform.localScale.y < 0)
             {
-                enemy.transform.localScale = new Vector3(enemy.transform.localScale.x, -enemy.transform.localScale.y, enemy.transform.localScale.z);
+                enemy.transform.localScale = new Vector3(enemy.transform.localScale.x, -enemy.transform.localScale.y, 0);
             }
         }
 
-        if (enemy.Agent.remainingDistance < 0.2f)
+        if (enemy.Agent.remainingDistance < 0.5f)
         {
             waitTimer += Time.deltaTime;
             if (waitTimer > 3)

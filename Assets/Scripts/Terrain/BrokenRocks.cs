@@ -14,10 +14,10 @@ public class BrokenRocks : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        SpeedBoost speed = collision.gameObject.GetComponent<SpeedBoost>();
-        if (speed != null)
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if (player != null)
         {
-            if (collision.gameObject.tag == "Player" && speed.isOnCooldown == true)
+            if (collision.gameObject.tag == "Player" && player.isSpeedBoostOnCooldown == true)
             {
                 animator.SetBool("IsBroken", true);
                 StartCoroutine(BreakWall());
