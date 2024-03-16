@@ -40,7 +40,7 @@ public class PlayerOxygen : MonoBehaviour
         curOxygen -= oxygenDecreaseRate;
         GaugeUI.UpdateGauge(curOxygen);
 
-        Debug.Log("Oxy: " + curOxygen);
+        // Debug.Log("Oxy: " + curOxygen);
 
         if (curOxygen <= 0)
         {

@@ -22,6 +22,6 @@ public class GaugeUI : MonoBehaviour
     public void UpdateGauge(int currentValue)
     {
         gaugeLevel.value = currentValue;
-        Debug.Log("Updated GaugeLevel" + gaugeLevel.value);
+        // Debug.Log("Updated GaugeLevel" + gaugeLevel.value);
     }
 }

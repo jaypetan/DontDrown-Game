@@ -20,7 +20,7 @@ public class TouchLightRotation : MonoBehaviour
 
         if (sprite.facingRight == true)
         {
-            Debug.Log("Face Right");
+            // Debug.Log("Face Right");
             difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         }
         else

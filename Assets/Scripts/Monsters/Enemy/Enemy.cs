@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public GameObject Player { get => player; }
     public Path path;
 
-    public float sightDistance = 10f;
+    public float sightDistance = 200f;
     public float fieldOfView = 360f;
     private void Start()
     {
@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        CanSeePlayer();
+        Debug.Log(CanSeePlayer());
         currentState = stateMachine.activeState.ToString();
     }
 
@@ -60,6 +60,7 @@ public class Enemy : MonoBehaviour
                 {
                     if (hit.collider.gameObject == player)
                     {
+                        Debug.Log("Player Spotted");
                         return true; // Player is within sight and no obstacles in between
                     }
                 }
