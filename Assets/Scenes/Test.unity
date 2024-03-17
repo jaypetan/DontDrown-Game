@@ -438,6 +438,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 729413244938832953, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: speedCD
+      value: 
+      objectReference: {fileID: 2135700207}
     - target: {fileID: 853293420287599381, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -34614,6 +34618,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &797837732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3314488822020939194, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+  m_PrefabInstance: {fileID: 5190079073166089010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &862266993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8170095229434624596, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+  m_PrefabInstance: {fileID: 5190079073166089010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &867522698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34754,6 +34768,11 @@ Transform:
   - {fileID: 867522699}
   m_Father: {fileID: 1806904458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1017549488 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4301672884643125693, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+  m_PrefabInstance: {fileID: 5190079073166089010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1141132110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35764,9 +35783,33 @@ PrefabInstance:
       propertyPath: sanityMeter
       value: 
       objectReference: {fileID: 1757907154}
+    - target: {fileID: 1536315632950127796, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 797837732}
+    - target: {fileID: 1536315632950127796, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1017549488}
+    - target: {fileID: 1536315632950127796, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536315632950127796, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: torchLight
+      value: 
+      objectReference: {fileID: 862266993}
+    - target: {fileID: 1536315632950127796, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1017549488}
     - target: {fileID: 1902720959826226424, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432895307635171208, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2432895307635171208, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: moveSpeed
@@ -35777,8 +35820,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2432895307635171208, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: torchLight
+      value: 
+      objectReference: {fileID: 862266993}
+    - target: {fileID: 2432895307635171208, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: acceleration
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432895307635171208, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: topAngleLimit
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 2432895307635171208, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: enableMovement
@@ -35787,6 +35838,10 @@ PrefabInstance:
     - target: {fileID: 2432895307635171208, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: speedMultiplier
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432895307635171208, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: bottomAngleLimit
+      value: -130
       objectReference: {fileID: 0}
     - target: {fileID: 2432895307635171208, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: speedBoostDuration
@@ -35838,10 +35893,14 @@ PrefabInstance:
       objectReference: {fileID: 1928826443}
     - target: {fileID: 4364426492109491970, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4915478192476661973, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915478192476661973, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5063450403776123502, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
@@ -35856,16 +35915,32 @@ PrefabInstance:
       propertyPath: m_NotificationBehavior
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5886957366298172009, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870723998320617017, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7624875180905723135, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170095229434624596, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 8226149776619905915, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8226149776619905915, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
       propertyPath: boostSlider
+      value: 
+      objectReference: {fileID: 2135700207}
+    - target: {fileID: 8226149776619905915, guid: f10e91840bd2eea4c83721bd525e9544, type: 3}
+      propertyPath: cooldownSlider
       value: 
       objectReference: {fileID: 2135700207}
     m_RemovedComponents: []

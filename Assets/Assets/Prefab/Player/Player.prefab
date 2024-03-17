@@ -55,6 +55,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   turnSpeed: 5
+  acceleration: 1000
+  speedMultiplier: 2
+  speedBoostCooldown: 10
+  speedBoostDuration: 2
+  isSpeedBoostOnCooldown: 0
 --- !u!50 &4915478192476661973
 Rigidbody2D:
   serializedVersion: 4
@@ -139,12 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7d00ef94a70e841bef1f74c4364b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boostedSpeed: 10
-  boostSlider: {fileID: 0}
-  speedBoostDuration: 2
+  increaseSpeed: 120
+  cooldownSlider: {fileID: 0}
   cooldownDuration: 10
-  isOnCooldown: 0
-  playerMovementScript: {fileID: 0}
 --- !u!60 &2876479887169836883
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -350,7 +352,7 @@ Transform:
   m_GameObject: {fileID: 3500660259343296479}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.680002, z: 0}
+  m_LocalPosition: {x: -0, y: 5.65, z: 0}
   m_LocalScale: {x: 2, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -433,8 +435,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5553637929182944474}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.02, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.11500001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -515,8 +517,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7624875180905723135}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -1.24, y: -0.16, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.547, y: -0.156, z: 0}
   m_LocalScale: {x: 0.20000002, y: 0.20000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -535,7 +537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd17668c7a5c0e4ebd8e4cee0240287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3314488822020939194}
 --- !u!114 &5606660408719203032
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction;
     private InputAction boostAction;
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -45,6 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         moveAction.Disable();
     }
+
     private void Update()
     {
         // Handle cooldown timer in Update to ensure it decreases over time
