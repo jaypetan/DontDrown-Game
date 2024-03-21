@@ -18,11 +18,13 @@ public class PlayerController : MonoBehaviour
     private float speedBoostCooldownTimer = 0f;
 
     private Rigidbody2D rb;
-    private Vector2 moveInput;
+    public Vector2 moveInput;
     private Vector2 currentVelocity;
     private PlayerInput playerInput;
     private InputAction moveAction;
     private InputAction boostAction;
+
+    public bool facingRight = true;
 
     private void Awake()
     {
@@ -95,11 +97,13 @@ public class PlayerController : MonoBehaviour
         {
             // Moving right - ensure sprite faces right (assuming default sprite faces right)
             transform.localScale = new Vector3(transform.localScale.x, Mathf.Abs(transform.localScale.y), transform.localScale.z);
+            facingRight = true;
         }
         else if (moveInput.x < 0)
         {
             // Moving left - flip sprite to face left
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), -Mathf.Abs(transform.localScale.y), transform.localScale.z);
+            facingRight = false;
         }
     }
 

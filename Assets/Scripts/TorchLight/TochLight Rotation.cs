@@ -8,20 +8,36 @@ public class TouchLightRotation : MonoBehaviour
     private float maxZRot = -50f;
     private float minZRot = -130f;
 
+    private GameObject player;
+    private PlayerController playerController;
+    bool facingRight;
+
     private void Start()
     {
-
+        player = GameObject.Find("Player");
+        playerController = player.GetComponent<PlayerController>();
     }
 
     private void Update()
     {
+        // Read the movement value
+        facingRight = playerController.facingRight;
 
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        Vector2 directionToMouse = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
-        transform.up = direction;
+        if (facingRight == true)
+        {
+            // Moving right - ensure sprite faces right (assuming default sprite faces right)
+            transform.up = directionToMouse.normalized;
+        }
+        else
+        {
+            // Moving left - flip sprite to face left
+            transform.up = -directionToMouse.normalized;
+        }
 
         LimitRot();
 
@@ -36,5 +52,6 @@ public class TouchLightRotation : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(playerEulerAngles);
     }
-    
+
+
 }
