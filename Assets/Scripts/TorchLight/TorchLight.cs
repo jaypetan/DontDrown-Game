@@ -1,36 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TorchLight : MonoBehaviour
+public class Torchlight : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collider)
+    public float torchDmg = 10f;
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger!");
-        // Enemies to take damage
-        if (collider.gameObject.TryGetComponent<MonsterHealth>(out MonsterHealth monsterhealthComponent))
+        if (other.CompareTag("Enemy"))
         {
-            monsterhealthComponent.TakeDamage(5);
+            Debug.Log("Enemy Damaged");
+            other.GetComponent<Enemy>().TakeDamage(torchDmg); 
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-
     }
 }

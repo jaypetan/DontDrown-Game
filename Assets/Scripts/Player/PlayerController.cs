@@ -117,4 +117,11 @@ public class PlayerController : MonoBehaviour
         isSpeedBoostOnCooldown = true;
         speedBoostCooldownTimer = speedBoostCooldown;
     }
+
+    public IEnumerator StunPlayer(float stunDuration)
+    {
+        DisableMovement(); // Immediately disable movement
+        yield return new WaitForSeconds(stunDuration); // Wait for the stun duration
+        EnableMovement(); // Re-enable movement after the duration
+    }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4221970755163167003}
   - component: {fileID: 359449234273471219}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EelGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 481042501
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 586deb9c96ecefa4098af76d76f62dc2, type: 3}
   m_Color: {r: 0.93207544, g: 0.63711786, b: 0.06155202, a: 1}
   m_FlipX: 0
@@ -93,15 +93,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7831087795843745096}
-  - component: {fileID: 8764944616055315469}
   - component: {fileID: 844489611298319721}
-  - component: {fileID: 2487241750507423256}
-  - component: {fileID: 8908362340827053217}
-  - component: {fileID: 3952606328848846470}
-  - component: {fileID: 6503281649635123305}
-  m_Layer: 0
+  - component: {fileID: 6893645571994975616}
+  - component: {fileID: 6523902410408277271}
+  - component: {fileID: 6858555486060664312}
+  - component: {fileID: 5483630545848130548}
+  m_Layer: 3
   m_Name: Eel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,15 +114,42 @@ Transform:
   m_GameObject: {fileID: 4654377964326721390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.15, y: -10.92, z: -0.21396041}
+  m_LocalPosition: {x: 2.69, y: -12.22, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4221970755163167003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &8764944616055315469
-BoxCollider2D:
+--- !u!50 &844489611298319721
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654377964326721390}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!60 &6893645571994975616
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,37 +190,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
---- !u!50 &844489611298319721
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4654377964326721390}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0.5
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &2487241750507423256
+  m_Points:
+    m_Paths:
+    - - {x: 1.9004717, y: -0.060412616}
+      - {x: -1.5019187, y: -0.20053439}
+      - {x: -1.5259672, y: -0.31931612}
+      - {x: -0.15058777, y: -0.4217471}
+      - {x: 1.7991284, y: -0.40768036}
+      - {x: 2.2491524, y: -0.27192682}
+  m_UseDelaunayMesh: 0
+--- !u!114 &6523902410408277271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,26 +208,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4654377964326721390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Script: {fileID: 11500000, guid: 52d860429d7ea60409db266651fe64ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 1
-  drawGizmos: 1
-  detailedGizmos: 0
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  graphMask:
-    value: -1
---- !u!114 &8908362340827053217
+  currentState: 
+  path: {fileID: 0}
+  sightDistance: 200
+  fieldOfView: 120
+  maxHealth: 100
+  curHealth: 0
+  canDamage: 0
+  canStun: 1
+  enemyDamage: 10
+--- !u!114 &6858555486060664312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,38 +229,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 4654377964326721390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fa0621b3fe4cba4b904a20350de56fc, type: 3}
+  m_Script: {fileID: 11500000, guid: eeb62c7c68e8c4b44b70db94b6acc8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 400
-  nextWayPointDistance: 3
-  enemyGFX: {fileID: 4221970755163167003}
-  currentWaypoint: 0
-  reachedEndOfPath: 0
---- !u!114 &3952606328848846470
-MonoBehaviour:
+--- !u!195 &5483630545848130548
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4654377964326721390}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd218d0c40ea82e45b7618ea191aab33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stunDuration: 4
---- !u!114 &6503281649635123305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4654377964326721390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219235c1221ac1f4e8230c241d047ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 359449234273471219}
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.61
+  m_Speed: 3
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.31
+  m_BaseOffset: 0.42
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

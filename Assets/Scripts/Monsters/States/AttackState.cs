@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackState : BaseState
 {
     private float losePlayerTimer = 0;
     public float waitBeforeSearchTime = 3.0f;
-    
+
     public override void Enter()
     {
-        
+
     }
 
     public override void Exit()
     {
-        
+
     }
 
     public override void Perform()
@@ -54,12 +55,15 @@ public class AttackState : BaseState
         else
         {
             losePlayerTimer += Time.deltaTime;
-            if(losePlayerTimer > waitBeforeSearchTime)
+            if (losePlayerTimer > waitBeforeSearchTime)
             {
                 // Go back to PatrolState
                 stateMachine.ChangeState(new PatrolState());
             }
 
+        }
+        if (enemy.curHealth <= 0){
+            stateMachine.ChangeState(new EscapeState());
         }
     }
 }

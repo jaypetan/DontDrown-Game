@@ -9,9 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1144720453129119631}
-  m_Layer: 0
+  - component: {fileID: 1366756697102081141}
+  - component: {fileID: 2200248938184293215}
+  - component: {fileID: 6210663874472648484}
+  - component: {fileID: 3588689507734847026}
+  - component: {fileID: 2772197338221595422}
+  m_Layer: 3
   m_Name: Angler_Fish
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,13 +30,152 @@ Transform:
   m_GameObject: {fileID: 1706896530860304328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.012838, y: -9.267671, z: -0.33047077}
+  m_LocalPosition: {x: 8.22, y: -9.267671, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3790023376768387565}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1366756697102081141
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706896530860304328}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &2200248938184293215
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706896530860304328}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -1.9382005, y: 0.17648125}
+      - {x: -1.6725512, y: -0.29502508}
+      - {x: -0.62134355, y: -0.7586802}
+      - {x: 0.4252081, y: -1.5136995}
+      - {x: 1.8141832, y: -1.6266689}
+      - {x: 2.668372, y: -1.0774801}
+      - {x: 1.115737, y: -0.39234352}
+      - {x: 1.0770264, y: 0.1587801}
+      - {x: 2.6146536, y: 0.8817291}
+      - {x: 2.1019802, y: 1.4128866}
+      - {x: 0.81682396, y: 1.3157516}
+  m_UseDelaunayMesh: 0
+--- !u!195 &6210663874472648484
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706896530860304328}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 1.52
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2.47
+  m_BaseOffset: 1.22
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &3588689507734847026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706896530860304328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d860429d7ea60409db266651fe64ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 
+  path: {fileID: 0}
+  sightDistance: 200
+  fieldOfView: 120
+  maxHealth: 100
+  curHealth: 0
+  canDamage: 1
+  canStun: 0
+  enemyDamage: 10
+--- !u!114 &2772197338221595422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706896530860304328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb62c7c68e8c4b44b70db94b6acc8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8083738128886162709
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3790023376768387565}
   - component: {fileID: 5707614375144710966}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Angler_Fish_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,8 +246,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 481042501
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 280602763, guid: 12c92cf870b9b834c8e3144179292343, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7433211523005396044}
   - component: {fileID: 8982989720814288213}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Big Fish_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 481042501
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1607525211, guid: 8de517fb9005b484fae197422fc5c728, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -93,9 +93,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9056922482630606817}
-  m_Layer: 0
+  - component: {fileID: 5068523622462267325}
+  - component: {fileID: 8021373391040302423}
+  - component: {fileID: 6991866778297800097}
+  - component: {fileID: 4025240592345839012}
+  - component: {fileID: 6604007065785025831}
+  m_Layer: 3
   m_Name: Fish_Big
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,10 +114,150 @@ Transform:
   m_GameObject: {fileID: 8514612038475714164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.012838, y: -9.267671, z: -0.33047077}
+  m_LocalPosition: {x: 20.02, y: -9.267671, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7433211523005396044}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &5068523622462267325
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514612038475714164}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 1.64
+  m_Speed: 2.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 300
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.91
+  m_BaseOffset: 0.53
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!60 &8021373391040302423
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514612038475714164}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.8905277, y: 0.4306879}
+      - {x: 1.531662, y: 0.6811218}
+      - {x: 0.9462242, y: 0.6402693}
+      - {x: 0.48962975, y: 0.42618465}
+      - {x: -0.19350243, y: -0.07889652}
+      - {x: -0.8412791, y: -0.3966963}
+      - {x: -0.3316378, y: -0.7671975}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 1.2844639, y: -0.79194546}
+      - {x: 1.926609, y: -0.3402815}
+      - {x: 1.7783394, y: -0.049354553}
+      - {x: 2.0226965, y: 0.094688356}
+  m_UseDelaunayMesh: 0
+--- !u!114 &6991866778297800097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514612038475714164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d860429d7ea60409db266651fe64ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 
+  path: {fileID: 0}
+  sightDistance: 200
+  fieldOfView: 120
+  maxHealth: 100
+  curHealth: 0
+  canChase: 0
+  canDamage: 0
+  canStun: 0
+  enemyDamage: 10
+--- !u!50 &4025240592345839012
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514612038475714164}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &6604007065785025831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514612038475714164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb62c7c68e8c4b44b70db94b6acc8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
