@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class gaugeController : MonoBehaviour
 {
     public Slider sanityMeter;
-    public float increaseRate = 50f;
+    public float increaseRate = 1000f;
     public KeyCode increaseKey = KeyCode.Z;
 
     public Slider cooldownSlider;

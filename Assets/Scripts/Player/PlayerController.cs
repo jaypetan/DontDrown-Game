@@ -78,11 +78,6 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ActivateSpeedBoost(speedBoostDuration));
         }
 
-        if (isSpeedBoostActive)
-        {
-            currentSpeed *= speedMultiplier;
-        }
-
         Vector2 targetVelocity = moveInput * currentSpeed;
         currentVelocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref smoothDampVelocity, 0.3f);
         rb.velocity = currentVelocity;

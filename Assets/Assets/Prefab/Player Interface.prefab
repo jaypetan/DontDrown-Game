@@ -164,7 +164,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2894174357764618616}
   - component: {fileID: 5763276082965769452}
-  - component: {fileID: 729413244938832953}
   m_Layer: 5
   m_Name: Sanity Boost
   m_TagString: Untagged
@@ -246,23 +245,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &729413244938832953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340990118871231174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26814cef63373947a012a6c579416c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sanityMeter: {fileID: 4166541150079655253}
-  increaseRate: 50
-  increaseKey: 122
-  cooldownSlider: {fileID: 5763276082965769452}
-  cooldownDuration: 2
 --- !u!1 &482832234149473059
 GameObject:
   m_ObjectHideFlags: 0

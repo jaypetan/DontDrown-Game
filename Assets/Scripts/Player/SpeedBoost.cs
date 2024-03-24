@@ -9,7 +9,7 @@ public class SpeedBoost : MonoBehaviour
     public KeyCode increaseSpeed = KeyCode.X;
 
     public Slider cooldownSlider;
-    public float cooldownDuration = 5f;
+    public float cooldownDuration = 4f;
     private float cooldownTimer = 0f;
 
 
@@ -33,15 +33,5 @@ public class SpeedBoost : MonoBehaviour
         // Update Cooldown UI
         cooldownSlider.value = cooldownTimer;
 
-        if (Input.GetKey(increaseSpeed) && cooldownTimer <= 0f)
-        {
-            cooldownTimer = cooldownDuration;         // Start cooldown after press
-        }
-
-        // Update the cooldown timer
-        cooldownTimer = Mathf.Max(0f, cooldownTimer - Time.deltaTime);
-
-        // Update Cooldown UI
-        cooldownSlider.value = cooldownTimer;
     }
 }
