@@ -1,0 +1,73 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1711383807",
+        "python_version": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\zongj\\OneDrive - Nanyang Technological University\\NTU\\School\\URECA\\DontDrown\\SubmarineGame\\MLvenv\\Scripts\\mlagents-learn --run-id =SubmarineGameRun5",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.2.1+cpu",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1711383948"
+    },
+    "total": 140.30324009999998,
+    "count": 1,
+    "self": 10.007171099999965,
+    "children": {
+        "run_training.setup": {
+            "total": 0.12674589999999952,
+            "count": 1,
+            "self": 0.12674589999999952
+        },
+        "TrainerController.start_learning": {
+            "total": 130.1693231,
+            "count": 1,
+            "self": 0.00041020000003300083,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 29.104670000000002,
+                    "count": 1,
+                    "self": 29.104670000000002
+                },
+                "TrainerController.advance": {
+                    "total": 100.86018870000001,
+                    "count": 1,
+                    "self": 2.0400000011022712e-05,
+                    "children": {
+                        "env_step": {
+                            "total": 100.8601683,
+                            "count": 1,
+                            "self": 100.8601384,
+                            "children": {
+                                "SubprocessEnvManager._take_step": {
+                                    "total": 2.9900000001248372e-05,
+                                    "count": 2,
+                                    "self": 2.9900000001248372e-05
+                                }
+                            }
+                        }
+                    }
+                },
+                "trainer_threads": {
+                    "total": 1.499999996212864e-06,
+                    "count": 1,
+                    "self": 1.499999996212864e-06
+                },
+                "TrainerController._save_models": {
+                    "total": 0.204052699999977,
+                    "count": 1,
+                    "self": 2.9799999964552626e-05,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.20402290000001244,
+                            "count": 1,
+                            "self": 0.20402290000001244
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

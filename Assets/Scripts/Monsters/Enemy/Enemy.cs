@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent Agent { get => agent; }
     public GameObject Player { get => player; }
     public Path path;
+    public PlayerMovement playerMovement;
 
     public float sightDistance = 200f;
     public float fieldOfView = 120f;
@@ -29,6 +30,13 @@ public class Enemy : MonoBehaviour
     public bool canDamage = true;
     public bool canStun = false;
     public int enemyDamage = 10;
+
+    public bool useMovementPrediction = false;
+    public float WaitDelay = 1f;
+    public float MovementPredictionThreshold = 0f;
+    [Range(0.25f, 2f)]
+    public float MovementPredictionTime = 1f;
+
     private void Start()
     {
         stateMachine = GetComponent<StateMachine>();
@@ -37,6 +45,7 @@ public class Enemy : MonoBehaviour
         stateMachine.Initialise();
 
         player = GameObject.FindGameObjectWithTag("Player");
+        playerMovement = player.GetComponent<PlayerMovement>();
 
         agent.updateRotation = false;
         agent.updateUpAxis = false;

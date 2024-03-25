@@ -22,7 +22,14 @@ public class PatrolState : BaseState
         PatrolCycle();
         if (enemy.CanSeePlayer())
         {
-            stateMachine.ChangeState(new AttackState());
+            if (enemy.useMovementPrediction)
+            {
+                stateMachine.ChangeState(new AttackImproved());
+            }
+            else
+            {
+                stateMachine.ChangeState(new AttackState());
+            }
         }
     }
 

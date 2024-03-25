@@ -7,7 +7,7 @@ public class Torchlight : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy Damaged");
+            // Debug.Log("Enemy Damaged");
             other.GetComponent<Enemy>().TakeDamage(torchDmg); 
         }
     }

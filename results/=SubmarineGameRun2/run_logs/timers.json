@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1711383049",
+        "python_version": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\zongj\\OneDrive - Nanyang Technological University\\NTU\\School\\URECA\\DontDrown\\SubmarineGame\\MLvenv\\Scripts\\mlagents-learn --run-id =SubmarineGameRun2",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.2.1+cpu",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1711383080"
+    },
+    "total": 30.820547599999998,
+    "count": 1,
+    "self": 0.0054697999999966385,
+    "children": {
+        "run_training.setup": {
+            "total": 0.13209589999999993,
+            "count": 1,
+            "self": 0.13209589999999993
+        },
+        "TrainerController.start_learning": {
+            "total": 30.6829819,
+            "count": 1,
+            "self": 0.0006426000000026022,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 30.6823102,
+                    "count": 1,
+                    "self": 30.6823102
+                },
+                "trainer_threads": {
+                    "total": 3.1000000006997652e-06,
+                    "count": 1,
+                    "self": 3.1000000006997652e-06
+                },
+                "TrainerController._save_models": {
+                    "total": 2.5999999998305157e-05,
+                    "count": 1,
+                    "self": 2.5999999998305157e-05
+                }
+            }
+        }
+    }
+}

@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     public Vector2 moveInput;
-    private Vector2 currentVelocity;
+    public Vector2 currentVelocity;
     private PlayerInput playerInput;
     private InputAction moveAction;
     private InputAction boostAction;

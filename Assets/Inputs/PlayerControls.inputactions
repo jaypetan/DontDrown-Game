@@ -134,6 +134,74 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MLControls",
+            "id": "03522eb1-cab5-40e8-b9cb-e262e07cb937",
+            "actions": [
+                {
+                    "name": "Patrol",
+                    "type": "Button",
+                    "id": "63579c21-ae1e-4a8a-b40a-b3a9a2128977",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "f9e5ea99-f100-4b7f-ad5d-afd0040230ae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "c868d3a2-115d-447a-8b2b-cdd2dc138b57",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "62c2252d-a43b-4da8-ae1e-95bcf6b81b64",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Patrol",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2528bb74-f39e-404c-8bcd-96502d9b844e",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9d78b109-d959-483d-bca4-a071c9c25fa4",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
