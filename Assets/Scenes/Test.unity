@@ -35924,6 +35924,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 618865026788886814, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4332405033065446716, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: cooldownSlider
       value: 
