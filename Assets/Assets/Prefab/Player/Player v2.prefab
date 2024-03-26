@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 618865026788886814}
   - component: {fileID: 2459277468849478337}
   - component: {fileID: 4899272620165998053}
-  - component: {fileID: 4332405033065446716}
   - component: {fileID: 4907481309577515179}
   - component: {fileID: 4988439776413907213}
   - component: {fileID: 7755091626678416047}
+  - component: {fileID: 8559770574992561776}
   m_Layer: 0
   m_Name: Player v2
   m_TagString: Player
@@ -62,6 +62,7 @@ MonoBehaviour:
   speedBoostDuration: 2
   isSpeedBoostOnCooldown: 1
   moveInput: {x: 0, y: 0}
+  currentVelocity: {x: 0, y: 0}
   facingRight: 1
 --- !u!50 &618865026788886814
 Rigidbody2D:
@@ -89,7 +90,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2459277468849478337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,21 +119,6 @@ MonoBehaviour:
   maxOxygen: 100
   oxygenDecreaseRate: 1
   GaugeUI: {fileID: 0}
---- !u!114 &4332405033065446716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491228103510790214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7d00ef94a70e841bef1f74c4364b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  increaseSpeed: 120
-  cooldownSlider: {fileID: 0}
-  cooldownDuration: 4
 --- !u!60 &4907481309577515179
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -235,6 +221,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e8217d3e-9c2f-49b1-8c7d-f1fca4407112
     m_ActionName: PlayerControls/SpeedBoost[/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 63579c21-ae1e-4a8a-b40a-b3a9a2128977
+    m_ActionName: MLControls/Patrol[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f9e5ea99-f100-4b7f-ad5d-afd0040230ae
+    m_ActionName: MLControls/Attack[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c868d3a2-115d-447a-8b2b-cdd2dc138b57
+    m_ActionName: MLControls/Escape[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -260,6 +258,20 @@ MonoBehaviour:
   increaseKey: 122
   cooldownSlider: {fileID: 0}
   cooldownDuration: 3
+--- !u!114 &8559770574992561776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491228103510790214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372d448f48a554747bb7f6164d70d8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HistoricalPositionDuration: 1
+  HistoricalPositionInterval: 0.1
 --- !u!1 &1929325156977628971
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,8 +338,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.3549999, y: -0.003799975, z: 0}
-    m_Extent: {x: 3.5268998, y: 0.9447, z: 0}
+    m_Center: {x: 1.35465, y: -0.0043500066, z: 0}
+    m_Extent: {x: 3.52565, y: 0.94515, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -663,7 +675,6 @@ GameObject:
   - component: {fileID: 6469504819584934379}
   - component: {fileID: 3593815744459067866}
   - component: {fileID: 7998799224501080945}
-  - component: {fileID: 3025855024140211576}
   m_Layer: 0
   m_Name: TorchLight
   m_TagString: Torch
@@ -737,19 +748,6 @@ PolygonCollider2D:
       - {x: 2.189336, y: 30.086058}
   m_UseDelaunayMesh: 0
 --- !u!114 &7998799224501080945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8939968844645245216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f71028bbef846bb4d8eb03f5f017a539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  torchDmg: 10
---- !u!114 &3025855024140211576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
