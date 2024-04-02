@@ -2355,7 +2355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798519433024829941, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8684270110838054752, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_Enabled
@@ -34534,16 +34534,22 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 1
-  agent: {fileID: 6089559015258758315}
+  navMeshAgent: {fileID: 0}
   player: {fileID: 9143371747221253103}
-  path: {fileID: 287515027}
+  startPosition: {x: 0, y: 0, z: 0}
   sightDistance: 200
-  escapeDistance: 100
-  safeDistance: 50
   fieldOfView: 120
-  waitTimer: 1
-  enemyDamage: 10
   maxHealth: 100
+  curHealth: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  torchlightLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  dodgeReward: 0.1
+  attackReward: 1
+  torchlightPenalty: -0.2
 --- !u!114 &783142607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35008,7 +35014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798519433024829941, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8684270110838054752, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_Enabled
@@ -35487,7 +35493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798519433024829941, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8684270110838054752, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_Enabled
@@ -35968,7 +35974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798519433024829941, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8684270110838054752, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_Enabled
@@ -36303,6 +36309,10 @@ PrefabInstance:
       propertyPath: path
       value: 
       objectReference: {fileID: 287515027}
+    - target: {fileID: 7407929779198471839, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 625356769}
     - target: {fileID: 7798519433024829941, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_Name
       value: Shark
@@ -36313,7 +36323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798519433024829941, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8684270110838054752, guid: 76db69099c108624db118042d5a8b3b4, type: 3}
       propertyPath: m_Enabled
@@ -36836,8 +36846,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.3544999, y: -0.0047500134, z: 0}
-    m_Extent: {x: 3.5257, y: 0.94495, z: 0}
+    m_Center: {x: 1.35495, y: -0.0036499798, z: 0}
+    m_Extent: {x: 3.52625, y: 0.94445, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

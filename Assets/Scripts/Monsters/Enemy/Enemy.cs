@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour
 
                     if (hit.collider != null)
                     {
-                        // Debug.Log($"Hit: {hit.collider.gameObject.name}");
+                        Debug.Log($"Hit: {hit.collider.gameObject.name}");
                         if (hit.collider.CompareTag("Player"))
                         {
                             // Debug.Log("Player Spotted");
