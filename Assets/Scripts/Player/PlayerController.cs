@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 10f;
     public float acceleration = 1000f;
     public float speedMultiplier = 2f;
-    public float speedBoostCooldown = 10f;
+    public float speedBoostCooldown = 2f;
     public float speedBoostDuration = 2f;
 
     private bool isSpeedBoostActive = false;

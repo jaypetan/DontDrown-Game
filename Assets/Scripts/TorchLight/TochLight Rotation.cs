@@ -14,7 +14,7 @@ public class TouchLightRotation : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Player v2");
         playerController = player.GetComponent<PlayerController>();
     }
 

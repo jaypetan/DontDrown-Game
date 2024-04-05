@@ -34488,36 +34488,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HistoricalPositionDuration: 1
   HistoricalPositionInterval: 0.1
---- !u!114 &625356770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9143371747221253103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26814cef63373947a012a6c579416c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sanityMeter: {fileID: 1757907154}
-  increaseRate: 1000
-  increaseKey: 122
-  cooldownSlider: {fileID: 1757907154}
-  cooldownDuration: 5
---- !u!114 &625356771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9143371747221253103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1780c1080bc3f408db2db872497b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gaugeLevel: {fileID: 1928826445}
 --- !u!114 &783142606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35812,15 +35782,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1928826445 stripped
+--- !u!114 &1928826447 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8228986027771598778, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+  m_CorrespondingSourceObject: {fileID: 383496687470756079, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
   m_PrefabInstance: {fileID: 130193593}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c1780c1080bc3f408db2db872497b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1974178682
@@ -36407,7 +36377,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9143371747221253103}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2d4325f41f14d54ba8ec5676d868c9d, type: 3}
   m_Name: 
@@ -36639,8 +36609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxOxygen: 1000
-  oxygenDecreaseRate: 0
-  GaugeUI: {fileID: 625356771}
+  oxygenDecreaseRate: 50
+  GaugeUI: {fileID: 1928826447}
 --- !u!60 &4334742346302794498
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -36846,8 +36816,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.35495, y: -0.0036499798, z: 0}
-    m_Extent: {x: 3.52625, y: 0.94445, z: 0}
+    m_Center: {x: 1.35505, y: -0.0043500066, z: 0}
+    m_Extent: {x: 3.5265498, y: 0.94475, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -37271,7 +37241,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1321641019687439564}
   - component: {fileID: 3165018046095326946}
-  - component: {fileID: 625356770}
   - component: {fileID: 625356769}
   - component: {fileID: 8116716899526390455}
   - component: {fileID: 6490780670864990568}
@@ -37279,7 +37248,7 @@ GameObject:
   - component: {fileID: 4334742346302794498}
   - component: {fileID: 4397913442003993252}
   - component: {fileID: 1417903590537808134}
-  - component: {fileID: 625356771}
+  - component: {fileID: 9143371747221253104}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -37287,6 +37256,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9143371747221253104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143371747221253103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7d00ef94a70e841bef1f74c4364b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseSpeed: 120
+  cooldownSlider: {fileID: 2135700207}
+  cooldownDuration: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class SpeedBoost : MonoBehaviour
     public KeyCode increaseSpeed = KeyCode.X;
 
     public Slider cooldownSlider;
-    public float cooldownDuration = 5f;
+    public float cooldownDuration = 6f;
     private float cooldownTimer = 0f;
 
 
