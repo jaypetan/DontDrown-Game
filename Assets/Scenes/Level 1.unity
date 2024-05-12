@@ -173,7 +173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueBox: {fileID: 1646351258}
   dialogue:
-    name: Mechanic
+    name: Candace
+    CharacterSprite: {fileID: 524342139, guid: f1f70edc76c325e49b9aa895a4840661, type: 3}
     sentences:
     - 'Those rocks look brittle..
 
@@ -270,7 +271,7 @@ PrefabInstance:
     - target: {fileID: 5264756150820665104, guid: cbe08bc69e8d8f2468854629061d3ed7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8949041429274190403, guid: cbe08bc69e8d8f2468854629061d3ed7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 59.093903
@@ -339,7 +340,7 @@ PrefabInstance:
     - target: {fileID: 8982989720814288213, guid: 2f4921dc95d9c7b4fbb724bbb14dac41, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 9056922482630606817, guid: 2f4921dc95d9c7b4fbb724bbb14dac41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.9
@@ -472,7 +473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8567262195766787890, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 21.351397
+      value: 33.066906
       objectReference: {fileID: 0}
     - target: {fileID: 8567262195766787890, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
       propertyPath: m_LocalScale.y
@@ -480,11 +481,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8567262195766787890, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.708855
+      value: -32.6
       objectReference: {fileID: 0}
     - target: {fileID: 8567262195766787890, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 50.31849
+      value: 32.8
       objectReference: {fileID: 0}
     - target: {fileID: 8567262195766787890, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -617,7 +618,7 @@ PrefabInstance:
     - target: {fileID: 5264756150820665104, guid: cbe08bc69e8d8f2468854629061d3ed7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8949041429274190403, guid: cbe08bc69e8d8f2468854629061d3ed7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.58
@@ -693,7 +694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7666693317711247205, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 7666693317711247205, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32663,11 +32664,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6171479994494262456, guid: c998628b86916174cba7c64c83b8461d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.864155
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 6171479994494262456, guid: c998628b86916174cba7c64c83b8461d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 44.62969
+      value: 44.63
       objectReference: {fileID: 0}
     - target: {fileID: 6171479994494262456, guid: c998628b86916174cba7c64c83b8461d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32736,7 +32737,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueBox: {fileID: 1646351258}
   dialogue:
-    name: Navigator
+    name: Nevel
+    CharacterSprite: {fileID: 1455763484, guid: 1d6cb7489128fd14a9f90a411c6540b7, type: 3}
     sentences:
     - "Hey it says to gown deeper down \nbut where's the entrance?"
 --- !u!4 &661282336 stripped
@@ -32913,6 +32915,7 @@ MonoBehaviour:
   DialogueBox: {fileID: 1646351258}
   dialogue:
     name: Captain
+    CharacterSprite: {fileID: -2054433358, guid: c979e72fb36ed334098a1f1509486db5, type: 3}
     sentences:
     - Let Focus ! We need to go deeper !
 --- !u!1 &736032138 stripped
@@ -32938,15 +32941,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426324979595984502, guid: 6f37ec7b20399a2469f39c0c474c291c, type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 4.3091564
       objectReference: {fileID: 0}
     - target: {fileID: 6524577977265343118, guid: 6f37ec7b20399a2469f39c0c474c291c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.518
       objectReference: {fileID: 0}
     - target: {fileID: 6524577977265343118, guid: 6f37ec7b20399a2469f39c0c474c291c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6524577977265343118, guid: 6f37ec7b20399a2469f39c0c474c291c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33066,7 +33069,7 @@ PrefabInstance:
     - target: {fileID: 5264756150820665104, guid: cbe08bc69e8d8f2468854629061d3ed7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8949041429274190403, guid: cbe08bc69e8d8f2468854629061d3ed7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46.267513
@@ -33163,6 +33166,7 @@ MonoBehaviour:
   DialogueBox: {fileID: 1646351258}
   dialogue:
     name: Captain
+    CharacterSprite: {fileID: -2054433358, guid: c979e72fb36ed334098a1f1509486db5, type: 3}
     sentences:
     - Stop Exploring ! We need to go deeper !
 --- !u!1 &965878051
@@ -33325,10 +33329,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueBox: {fileID: 1646351258}
   dialogue:
-    name: Captain
+    name: Sommer
+    CharacterSprite: {fileID: 805297135, guid: 69b807a620e686e47883329080bd7b47, type: 3}
     sentences:
-    - Keep a lookout for fishes nearby..
-    - They'll bump into us !
+    - 'OH MY GOD!!! The fishes here are so damn pretty!! '
+    - I heard there are jellyfishes here.. they probably sting!
 --- !u!4 &997372558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8567262195766787890, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
@@ -33368,7 +33373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6171479994494262456, guid: c998628b86916174cba7c64c83b8461d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 32
+      value: 48.5408
       objectReference: {fileID: 0}
     - target: {fileID: 6171479994494262456, guid: c998628b86916174cba7c64c83b8461d, type: 3}
       propertyPath: m_LocalScale.y
@@ -33376,7 +33381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6171479994494262456, guid: c998628b86916174cba7c64c83b8461d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.844154
+      value: -17.5742
       objectReference: {fileID: 0}
     - target: {fileID: 6171479994494262456, guid: c998628b86916174cba7c64c83b8461d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -33453,7 +33458,7 @@ PrefabInstance:
     - target: {fileID: 8982989720814288213, guid: 2f4921dc95d9c7b4fbb724bbb14dac41, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 9056922482630606817, guid: 2f4921dc95d9c7b4fbb724bbb14dac41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.4
@@ -33581,7 +33586,7 @@ PrefabInstance:
     - target: {fileID: 1843307735559958657, guid: be0d752ecf767b94daeddbe96328990d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 7198210176990078057, guid: be0d752ecf767b94daeddbe96328990d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.075275
@@ -33651,6 +33656,22 @@ PrefabInstance:
       propertyPath: DialogueBox
       value: 
       objectReference: {fileID: 1646351258}
+    - target: {fileID: 4767502405862731040, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
+      propertyPath: dialogue.name
+      value: Nevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767502405862731040, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
+      propertyPath: dialogue.CharacterSprite
+      value: 
+      objectReference: {fileID: 1455763484, guid: 1d6cb7489128fd14a9f90a411c6540b7, type: 3}
+    - target: {fileID: 4767502405862731040, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767502405862731040, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: I swear the map said there was an entrance back there
+      objectReference: {fileID: 0}
     - target: {fileID: 4941399006176971297, guid: b2ef2234edf14094ebd27901cad916fd, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -33789,7 +33810,7 @@ PrefabInstance:
     - target: {fileID: 5264756150820665104, guid: cbe08bc69e8d8f2468854629061d3ed7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8949041429274190403, guid: cbe08bc69e8d8f2468854629061d3ed7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.257046
@@ -34119,7 +34140,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35102,6 +35123,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 342990559069049664, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 342990559069049664, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 175
+      objectReference: {fileID: 0}
     - target: {fileID: 602913232060662025, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 6
@@ -35140,7 +35169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3137088744522679530, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3234861400592921872, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -35149,6 +35178,10 @@ PrefabInstance:
     - target: {fileID: 4651414733848071601, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513225853474535159, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6183592154922121355, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_Text
@@ -35177,6 +35210,10 @@ PrefabInstance:
     - target: {fileID: 7039582462969222919, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173004376203041938, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7396684983277909439, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
