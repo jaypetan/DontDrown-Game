@@ -694,7 +694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7666693317711247205, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.97
+      value: -0.32
       objectReference: {fileID: 0}
     - target: {fileID: 7666693317711247205, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32949,7 +32949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6524577977265343118, guid: 6f37ec7b20399a2469f39c0c474c291c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -0.29
       objectReference: {fileID: 0}
     - target: {fileID: 6524577977265343118, guid: 6f37ec7b20399a2469f39c0c474c291c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33165,10 +33165,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueBox: {fileID: 1646351258}
   dialogue:
-    name: Captain
-    CharacterSprite: {fileID: -2054433358, guid: c979e72fb36ed334098a1f1509486db5, type: 3}
+    name: Nevel
+    CharacterSprite: {fileID: 1455763484, guid: 1d6cb7489128fd14a9f90a411c6540b7, type: 3}
     sentences:
-    - Stop Exploring ! We need to go deeper !
+    - That doesn't look right..
+    - Turn around lets just aim to go deeper.
 --- !u!1 &965878051
 GameObject:
   m_ObjectHideFlags: 0

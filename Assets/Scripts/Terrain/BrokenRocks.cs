@@ -17,7 +17,7 @@ public class BrokenRocks : MonoBehaviour
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
         if (player != null)
         {
-            if (collision.gameObject.tag == "Player" && player.isSpeedBoostOnCooldown == true)
+            if (collision.gameObject.tag == "Player" && player.isSpeedBoostActive == true)
             {
                 animator.SetBool("IsBroken", true);
                 StartCoroutine(BreakWall());

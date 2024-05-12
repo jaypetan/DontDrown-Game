@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float speedBoostCooldown = 2f;
     public float speedBoostDuration = 2f;
 
-    private bool isSpeedBoostActive = false;
+    public bool isSpeedBoostActive = false;
     public bool isSpeedBoostOnCooldown = false;
     private float speedBoostCooldownTimer = 0f;
 

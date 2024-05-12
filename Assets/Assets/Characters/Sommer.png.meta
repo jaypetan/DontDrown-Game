@@ -118,7 +118,7 @@ TextureImporter:
         width: 771
         height: 866
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Sommer_1
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 388
-        width: 666
-        height: 817
+        x: 1163
+        y: 384
+        width: 775
+        height: 843
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
