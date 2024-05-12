@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
+    public Image CharacterImage;
 
     public Animator animator;
     
@@ -15,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+        CharacterImage = GameObject.Find("CharacterImage").GetComponent<Image>();
     }
 
     private void Update()
@@ -30,7 +32,9 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("IsOpen", true);
-        
+
+        CharacterImage.sprite = dialogue.CharacterSprite;
+
         nameText.text = dialogue.name;
 
         sentences.Clear();
