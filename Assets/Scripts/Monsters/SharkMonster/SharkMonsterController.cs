@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class SharkMonsterController : MonoBehaviour
 {
@@ -20,7 +21,15 @@ public class SharkMonsterController : MonoBehaviour
     private float attackTimer;
     private bool isFollowing = true;
     private Vector2 direction;
-    private List<Transform> segments = new List<Transform>();
+    public List<Transform> segments = new List<Transform>();
+
+    //For freeze 
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    public Color freezeColor = Color.red;
+    private bool isFrozen = false;
+    private float initialSpeed; 
+    private float freezeDuration = 2.0f; // Duration of the freeze in seconds
 
     void Start()
     {
@@ -32,6 +41,10 @@ public class SharkMonsterController : MonoBehaviour
         {
             AddSegment();
         }
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        originalColor = spriteRenderer.color;
     }
 
     void Update()
@@ -144,6 +157,61 @@ public class SharkMonsterController : MonoBehaviour
             tail = Instantiate(tailPrefab); // Instantiate the tail
             UpdateTailPosition(); // Update tail position initially
         }
+    }
+    public void Freeze()
+    {
+        if (!isFrozen)
+        {
+            isFrozen = true;
+            followTimer = 0;
+            initialSpeed = straightSpeed;
+            straightSpeed = 0;
+            spriteRenderer.color = freezeColor; // Change color to red
+
+            // Change color of all segments
+            foreach (Transform segment in segments)
+            {
+                SpriteRenderer segmentRenderer = segment.GetComponent<SpriteRenderer>();
+                segmentRenderer.color = freezeColor;
+            }
+
+            SpriteRenderer tailRenderer = tail.GetComponent<SpriteRenderer>();
+            tailRenderer.color = freezeColor;
+
+            // Start coroutine to unfreeze after a delay
+            StartCoroutine(UnfreezeAfterDelay());
+        }
+    }
+    private IEnumerator UnfreezeAfterDelay()
+    {
+        yield return new WaitForSeconds(freezeDuration);
+
+        // Revert the changes
+        isFrozen = false;
+        attackTimer = 0;
+        straightSpeed = initialSpeed;
+        spriteRenderer.color = originalColor;
+
+        // Revert color of all segments
+        foreach (Transform segment in segments)
+        {
+            SpriteRenderer segmentRenderer = segment.GetComponent<SpriteRenderer>();
+            segmentRenderer.color = originalColor;
+        }
+
+        SpriteRenderer tailRenderer = tail.GetComponent<SpriteRenderer>();
+        tailRenderer.color = originalColor;
+    }
+
+    public void DestroyAllSegments() 
+    {
+        foreach (Transform segment in segments)
+        {
+            Destroy(segment.gameObject);
+        }
+        segments.Clear();
+
+        Destroy(tail);
     }
 }
 
