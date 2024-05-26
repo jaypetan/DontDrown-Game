@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -259,14 +259,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
+  player: {fileID: 491228103510790214, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
   path: {fileID: 0}
+  playerMovement: {fileID: 0}
   sightDistance: 200
   fieldOfView: 120
   maxHealth: 100
   curHealth: 0
+  canChase: 1
   canDamage: 0
   canStun: 1
   enemyDamage: 10
+  useMovementPrediction: 1
+  WaitDelay: 1
+  MovementPredictionThreshold: 0
+  MovementPredictionTime: 1
 --- !u!114 &3280585023717578645
 MonoBehaviour:
   m_ObjectHideFlags: 0

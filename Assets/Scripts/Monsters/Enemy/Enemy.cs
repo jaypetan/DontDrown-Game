@@ -13,7 +13,8 @@ public class Enemy : MonoBehaviour
 
     private StateMachine stateMachine;
     private NavMeshAgent agent;
-    private GameObject player;
+
+    [SerializeField] private GameObject player;
 
     public NavMeshAgent Agent { get => agent; }
     public GameObject Player { get => player; }
@@ -37,39 +38,79 @@ public class Enemy : MonoBehaviour
     [Range(0.25f, 2f)]
     public float MovementPredictionTime = 1f;
 
-    private void Start()
+    private void Awake()
     {
         stateMachine = GetComponent<StateMachine>();
+        if (stateMachine == null)
+        {
+            Debug.LogError("StateMachine component not found on this GameObject");
+        }
+
         agent = GetComponent<NavMeshAgent>();
+        if (agent == null)
+        {
+            Debug.LogError("NavMeshAgent component not found on this GameObject");
+        }
 
-        stateMachine.Initialise();
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
 
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerMovement = player.GetComponent<PlayerMovement>();
+        if (player == null)
+        {
+            Debug.LogError("Player GameObject with tag 'Player' not found in the scene");
+        }
+        else
+        {
+            playerMovement = player.GetComponent<PlayerMovement>();
+            if (playerMovement == null)
+            {
+                Debug.LogError("PlayerMovement component not found on the Player GameObject");
+            }
+            else
+            {
+                Debug.Log("PlayerMovement component successfully found on the Player GameObject");
+            }
+        }
+    }
 
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+    private void Start()
+    {
+        if (stateMachine != null)
+        {
+            stateMachine.Initialise();
+        }
+
+        if (agent != null)
+        {
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+            Debug.Log("Found");
+        }
 
         curHealth = maxHealth;
     }
 
+
+
     private void Update()
-    {
-        // Debug.Log(CanSeePlayer());
-        currentState = stateMachine.activeState.ToString();
-        if (canChase)
         {
-            CanSeePlayer();
-        }
+            // Debug.Log(CanSeePlayer());
+            currentState = stateMachine.activeState.ToString();
+            if (canChase)
+            {
+                CanSeePlayer();
+            }
 
-        // Force Z position to stay at a fixed value, e.g., 0
-        var position = transform.position;
-        if (position.z != 0)
-        {
-            transform.position = new Vector3(position.x, position.y, 0);
-        }
+            // Force Z position to stay at a fixed value, e.g., 0
+            var position = transform.position;
+            if (position.z != 0)
+            {
+                transform.position = new Vector3(position.x, position.y, 0);
+            }
 
-    }
+        }
 
     public bool CanSeePlayer()
     {

@@ -134,13 +134,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
+  player: {fileID: 491228103510790214, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
   path: {fileID: 0}
+  playerMovement: {fileID: 0}
   sightDistance: 10
   fieldOfView: 360
   maxHealth: 100
   curHealth: 0
+  canChase: 1
   canDamage: 1
   canStun: 0
+  enemyDamage: 10
+  useMovementPrediction: 0
+  WaitDelay: 1
+  MovementPredictionThreshold: 0
+  MovementPredictionTime: 1
 --- !u!60 &447621149666055140
 PolygonCollider2D:
   m_ObjectHideFlags: 0

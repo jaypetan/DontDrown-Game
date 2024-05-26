@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
+  player: {fileID: 0}
   path: {fileID: 0}
   playerMovement: {fileID: 0}
   sightDistance: 200
@@ -269,7 +270,7 @@ MonoBehaviour:
   canDamage: 0
   canStun: 1
   enemyDamage: 10
-  useMovementPrediction: 0
+  useMovementPrediction: 1
   WaitDelay: 1
   MovementPredictionThreshold: 0
   MovementPredictionTime: 1
