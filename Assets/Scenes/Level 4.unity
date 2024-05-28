@@ -344,6 +344,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.3164978
       objectReference: {fileID: 0}
+    - target: {fileID: 6051873811595043279, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 187d35929658bae40bf0fd6c10814129, type: 3}
     - target: {fileID: 6183592154922121355, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_Text
       value: "Input a test sentence to depict \nhow exactly the\ntext is layed out"

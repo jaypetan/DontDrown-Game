@@ -33093,10 +33093,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2206658590193480823, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2578752335792969713, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_Name
       value: Player Interface
       objectReference: {fileID: 0}
+    - target: {fileID: 6051873811595043279, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 88f6d7a14c1ddec468d65505ac476660, type: 3}
     - target: {fileID: 6927374688251484884, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -33952,6 +33960,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1695911450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1459180195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2206658590193480823, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+  m_PrefabInstance: {fileID: 881351021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1461797823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34710,7 +34723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 901169060}
-  CutScene: {fileID: 0}
+  CutScene: {fileID: 1459180195}
 --- !u!212 &1843728052
 SpriteRenderer:
   m_ObjectHideFlags: 0
