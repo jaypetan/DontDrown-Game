@@ -13,7 +13,7 @@ public class PlayerOxygen : MonoBehaviour
     public GaugeUI GaugeUI;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         curOxygen = maxOxygen;
         SetHealth();
