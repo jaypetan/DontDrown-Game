@@ -35,6 +35,7 @@ public class PatrolState : BaseState
 
     public void PatrolCycle()
     {
+        // Calculate the direction and rotation to face the waypoint
         Vector2 direction = enemy.path.waypoints[waypointIndex].position - enemy.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Subtract 90 to correct for sprite orientation
         Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
@@ -46,7 +47,7 @@ public class PatrolState : BaseState
             // Flip sprite by setting localScale.y to -1
             if (enemy.transform.localScale.y > 0)
             {
-                enemy.transform.localScale = new Vector3(enemy.transform.localScale.x, -enemy.transform.localScale.y, 0);
+                enemy.transform.localScale = new Vector3(enemy.transform.localScale.x, -enemy.transform.localScale.y, enemy.transform.localScale.z);
             }
         }
         else
@@ -54,22 +55,22 @@ public class PatrolState : BaseState
             // Ensure sprite is not flipped if it doesn't meet the conditions
             if (enemy.transform.localScale.y < 0)
             {
-                enemy.transform.localScale = new Vector3(enemy.transform.localScale.x, -enemy.transform.localScale.y, 0);
+                enemy.transform.localScale = new Vector3(enemy.transform.localScale.x, -enemy.transform.localScale.y, enemy.transform.localScale.z);
             }
         }
 
-        if (enemy.Agent.remainingDistance < 0.5f)
+        // Check if the agent is close to the current waypoint
+        if (enemy.Agent.remainingDistance < 0.5f && !enemy.Agent.pathPending)
         {
-            waitTimer += Time.deltaTime;
-            if (waitTimer > 3)
+            // Move to the next waypoint without stopping
+            waypointIndex++;
+            if (waypointIndex >= enemy.path.waypoints.Count)
             {
-                if (waypointIndex < enemy.path.waypoints.Count - 1)
-                    waypointIndex++;
-                else
-                    waypointIndex = 0;
-
-                enemy.Agent.SetDestination(enemy.path.waypoints[waypointIndex].position);   
+                waypointIndex = 0; // Loop back to the first waypoint
             }
+
+            // Set the new destination
+            enemy.Agent.SetDestination(enemy.path.waypoints[waypointIndex].position);
         }
     }
 }

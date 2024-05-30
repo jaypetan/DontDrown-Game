@@ -36850,6 +36850,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5321817208190016894, guid: 5710bc4176e342b4084a71d1110947c9, type: 3}
+      propertyPath: m_Height
+      value: 1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321817208190016894, guid: 5710bc4176e342b4084a71d1110947c9, type: 3}
+      propertyPath: m_Radius
+      value: 2.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321817208190016894, guid: 5710bc4176e342b4084a71d1110947c9, type: 3}
+      propertyPath: m_BaseOffset
+      value: 0.86
+      objectReference: {fileID: 0}
     - target: {fileID: 7919496271262057161, guid: 5710bc4176e342b4084a71d1110947c9, type: 3}
       propertyPath: path
       value: 
@@ -37114,6 +37126,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2644670283980270559, guid: 6bcab3be53caa494d907ddffee4ffac7, type: 3}
+      propertyPath: m_Height
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644670283980270559, guid: 6bcab3be53caa494d907ddffee4ffac7, type: 3}
+      propertyPath: m_Radius
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644670283980270559, guid: 6bcab3be53caa494d907ddffee4ffac7, type: 3}
+      propertyPath: m_BaseOffset
+      value: -0.84
+      objectReference: {fileID: 0}
     - target: {fileID: 6913688316809260918, guid: 6bcab3be53caa494d907ddffee4ffac7, type: 3}
       propertyPath: path
       value: 
@@ -37126,6 +37150,10 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 901169062}
+    - target: {fileID: 6913688316809260918, guid: 6bcab3be53caa494d907ddffee4ffac7, type: 3}
+      propertyPath: MovementPredictionThreshold
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 7198210176990078057, guid: 6bcab3be53caa494d907ddffee4ffac7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.075275

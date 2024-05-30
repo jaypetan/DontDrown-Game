@@ -90,6 +90,7 @@ public class Enemy : MonoBehaviour
         }
 
         curHealth = maxHealth;
+
     }
 
 
