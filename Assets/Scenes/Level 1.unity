@@ -531,10 +531,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player v2
       objectReference: {fileID: 0}
-    - target: {fileID: 2891480955793776240, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4899272620165998053, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: GaugeUI
       value: 
@@ -624,6 +620,7 @@ GameObject:
   - component: {fileID: 607103170}
   - component: {fileID: 607103169}
   - component: {fileID: 607103171}
+  - component: {fileID: 607103172}
   m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
@@ -32477,6 +32474,20 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &607103172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607103164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202ebd0bed4a1524eab491292fdbbd3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sanityDamage: 4
+  sanityCollision: {fileID: 901169066}
 --- !u!1001 &647043011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33286,6 +33297,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50ff724d2f297b14487c93acbd0ee0e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &901169066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7755091626678416047, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+  m_PrefabInstance: {fileID: 603168643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901169060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d4325f41f14d54ba8ec5676d868c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &917902386 stripped

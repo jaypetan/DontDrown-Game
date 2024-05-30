@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerSanity : MonoBehaviour
 {
     public int maxSanity = 100;
-    private int curSanity;
+    public int curSanity;
     public int sanityDecreaseRate = 2;
     bool sanityDecreaseZone = true;
     float elapsed = 0f;
@@ -19,6 +19,7 @@ public class PlayerSanity : MonoBehaviour
     public Slider cooldownSlider;
     public float cooldownDuration = 3f;
     private float cooldownTimer = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,8 @@ public class PlayerSanity : MonoBehaviour
         if (Input.GetKey(increaseKey) && cooldownTimer <= 0f)
         {
             IncreaseGauge();
-            cooldownTimer = cooldownDuration;         // Start cooldown after press
+            // Start cooldown after press
+            cooldownTimer = cooldownDuration;         
         }
 
         // Update the cooldown timer
@@ -58,15 +60,12 @@ public class PlayerSanity : MonoBehaviour
     private void sanityDecrease()
     {
         curSanity -= sanityDecreaseRate;
+        curSanity = Mathf.Clamp(curSanity, 0, maxSanity);
         GaugeUI.UpdateGauge(curSanity);
 
-        if (curSanity <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 
-    void IncreaseGauge()
+    public void IncreaseGauge()
     {
         // Calculate new value based on increase rate
         float newValue = curSanity + increaseRate * Time.deltaTime;
@@ -76,7 +75,15 @@ public class PlayerSanity : MonoBehaviour
 
         //Update slider value
         curSanity = (int)newValue;
+        curSanity = Mathf.Clamp(curSanity, 0, maxSanity);
         GaugeUI.UpdateGauge(curSanity);
     }
 
+    public void TakeSanityDamage(int sanityDamage)
+    {
+        curSanity -= sanityDamage;
+        curSanity = Mathf.Clamp(curSanity, 0, maxSanity);
+        GaugeUI.UpdateGauge(curSanity);
+        Debug.Log("Sanity: " + curSanity);
+    }
 }

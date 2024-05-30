@@ -61,9 +61,11 @@ MonoBehaviour:
   speedMultiplier: 1.5
   speedBoostCooldown: 2
   speedBoostDuration: 2
+  isSpeedBoostActive: 0
   isSpeedBoostOnCooldown: 1
   moveInput: {x: 0, y: 0}
   currentVelocity: {x: 0, y: 0}
+  moveSanity: {fileID: 7755091626678416047}
   facingRight: 1
 --- !u!50 &618865026788886814
 Rigidbody2D:
@@ -252,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSanity: 100
+  curSanity: 0
   sanityDecreaseRate: 2
   GaugeUI: {fileID: 0}
   sanityMeter: {fileID: 0}
@@ -298,6 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5509069754766845280}
   - component: {fileID: 5183574807449014027}
+  - component: {fileID: 5510163080167300249}
   m_Layer: 0
   m_Name: TorchLight Lighting
   m_TagString: Untagged
@@ -354,8 +358,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.35495, y: -0.008449972, z: 0}
-    m_Extent: {x: 3.52635, y: 1.2304499, z: 0}
+    m_Center: {x: 1.3555499, y: -0.007450044, z: 0}
+    m_Extent: {x: 3.52595, y: 1.23065, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -371,6 +375,19 @@ MonoBehaviour:
   - {x: 4.3810277, y: 0.7226794, z: 0}
   - {x: 1.575674, y: 0.36868113, z: 0}
   - {x: -1.6725657, y: -0.0037078708, z: 0}
+--- !u!114 &5510163080167300249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929325156977628971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7368c79a4c4d592429ed36b37abf9836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torchSanity: {fileID: 7755091626678416047}
 --- !u!1 &2203687503155842261
 GameObject:
   m_ObjectHideFlags: 0

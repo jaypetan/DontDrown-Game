@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction moveAction;
     private InputAction boostAction;
+    public PlayerSanity moveSanity;
 
     public bool facingRight = true;
 
@@ -58,6 +59,22 @@ public class PlayerController : MonoBehaviour
                 isSpeedBoostOnCooldown = false;
                 speedBoostCooldownTimer = 0; // Ensure the timer doesn't go negative
             }
+        }
+
+        if (moveSanity.curSanity <= 80 && moveSanity.curSanity >= 61)
+        {
+            moveSpeed = 8f;
+        } else if (moveSanity.curSanity <= 60 && moveSanity.curSanity >= 41) 
+        {
+            moveSpeed = 10f;
+        } else if (moveSanity.curSanity <= 40 && moveSanity.curSanity >= 21) 
+        {
+            moveSpeed = 12f;
+        } else if (moveSanity.curSanity <= 20) 
+        {
+            moveSpeed = 14f;
+        } else {
+            moveSpeed = 6f;
         }
     }
 
