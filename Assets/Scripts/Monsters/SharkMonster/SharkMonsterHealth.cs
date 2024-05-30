@@ -61,6 +61,9 @@ public class SharkMonsterHealth : MonoBehaviour
     void EndGame()
     {
         GoToEndScene.SetActive(true);
-        CheckPoint.SetActive(false);
+        if(CheckPoint != null)
+        {
+            CheckPoint.SetActive(false);
+        }
     }
 }

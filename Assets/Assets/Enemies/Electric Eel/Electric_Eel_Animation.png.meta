@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Electric_Eel_Animation_10
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 120
+        width: 487
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f45c670297a6354aad532a2ca5eac7b
+      internalID: 1636891407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electric_Eel_Animation_11
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 108
+        width: 490
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f4cde40d31ff441923ed16c9fc5eea
+      internalID: 1406894249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electric_Eel_Animation_12
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 106
+        width: 498
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d95b0f4ceef03849bcd682c0a2fbca1
+      internalID: -845348716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electric_Eel_Animation_13
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 108
+        width: 489
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5678bfcc105c6c44baf77d0bff83a34
+      internalID: 1149002160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electric_Eel_Animation_14
+      rect:
+        serializedVersion: 2
+        x: 2653
+        y: 120
+        width: 488
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d72cec6a15e4140b43eda438081e2d
+      internalID: -1461214265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +224,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Electric_Eel_Animation_0: -250077022
+      Electric_Eel_Animation_1: 293017503
+      Electric_Eel_Animation_10: 1636891407
+      Electric_Eel_Animation_11: 1406894249
+      Electric_Eel_Animation_12: -845348716
+      Electric_Eel_Animation_13: 1149002160
+      Electric_Eel_Animation_14: -1461214265
+      Electric_Eel_Animation_15: -1112849176
+      Electric_Eel_Animation_2: -2082815130
+      Electric_Eel_Animation_3: -1725185376
+      Electric_Eel_Animation_4: -1419011068
+      Electric_Eel_Animation_5: -882594583
+      Electric_Eel_Animation_6: -284028515
+      Electric_Eel_Animation_7: -959936354
+      Electric_Eel_Animation_8: 435006992
+      Electric_Eel_Animation_9: -493359284
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

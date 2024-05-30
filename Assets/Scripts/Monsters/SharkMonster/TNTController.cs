@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class TNTController : MonoBehaviour
@@ -7,6 +8,13 @@ public class TNTController : MonoBehaviour
     public float explosionForce = 700f; // Force of the explosion
     public int damage = 30; // Damage dealt by the explosion
     public LayerMask damageLayer; // Layer of objects that can be damaged
+
+    private Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -43,6 +51,19 @@ public class TNTController : MonoBehaviour
         }
 
         // Destroy the TNT object after the explosion
+        animator.SetTrigger("Explode");
+        StartCoroutine(DestroyAfterAnimation());
+
+    }
+    IEnumerator DestroyAfterAnimation()
+    {
+        // Wait for the length of the explosion animation
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        yield return new WaitForSeconds(stateInfo.length);
+
+        // Optionally, add a slight delay to ensure the animation completes
+        // yield return new WaitForSeconds(0.1f);
+
         Destroy(gameObject);
     }
 

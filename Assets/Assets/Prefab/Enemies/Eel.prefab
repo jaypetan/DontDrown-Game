@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4221970755163167003}
   - component: {fileID: 359449234273471219}
+  - component: {fileID: 6013384476579669648}
   m_Layer: 3
   m_Name: EelGFX
   m_TagString: Untagged
@@ -72,18 +73,39 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 481042501
   m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 586deb9c96ecefa4098af76d76f62dc2, type: 3}
-  m_Color: {r: 0.93207544, g: 0.63711786, b: 0.06155202, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.8700004, y: 0.77174765}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6013384476579669648
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411847112416732557}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91e135fcabd2fc1448c007e894029d39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4654377964326721390
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,12 +214,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.9004717, y: -0.060412616}
-      - {x: -1.5019187, y: -0.20053439}
-      - {x: -1.5259672, y: -0.31931612}
-      - {x: -0.15058777, y: -0.4217471}
-      - {x: 1.7991284, y: -0.40768036}
-      - {x: 2.2491524, y: -0.27192682}
+    - - {x: 2.0212069, y: 0.20011213}
+      - {x: 0.8398217, y: 0.10664559}
+      - {x: -0.6904951, y: 0.10518328}
+      - {x: -2.264426, y: -0.1751158}
+      - {x: -2.2694263, y: -0.47817922}
+      - {x: -0.7034137, y: -0.5869553}
+      - {x: 0.276073, y: -0.56369215}
+      - {x: 1.341696, y: -0.65824574}
+      - {x: 2.3138328, y: -0.50299054}
+      - {x: 2.7765725, y: -0.2782783}
   m_UseDelaunayMesh: 0
 --- !u!114 &6523902410408277271
 MonoBehaviour:
@@ -212,10 +238,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
-  player: {fileID: 491228103510790214, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+  player: {fileID: 0}
   path: {fileID: 0}
   playerMovement: {fileID: 0}
-  sightDistance: 200
+  sightDistance: 10
   fieldOfView: 120
   maxHealth: 100
   curHealth: 0
