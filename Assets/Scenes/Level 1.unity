@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10317498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1133998312303788426, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+  m_PrefabInstance: {fileID: 881351021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &46789483
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +549,14 @@ PrefabInstance:
       propertyPath: GaugeUI
       value: 
       objectReference: {fileID: 881351026}
+    - target: {fileID: 4899272620165998053, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 10317498}
+    - target: {fileID: 4899272620165998053, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+      propertyPath: playerSprite
+      value: 
+      objectReference: {fileID: 2017448308}
     - target: {fileID: 4988439776413907213, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: m_Camera
       value: 
@@ -35154,6 +35167,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2030316224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2017448308 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4876071992765727200, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+  m_PrefabInstance: {fileID: 603168643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2030316223
 GameObject:
   m_ObjectHideFlags: 0

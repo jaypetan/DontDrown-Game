@@ -284,6 +284,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 948966585674142767, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.1999512
+      objectReference: {fileID: 0}
+    - target: {fileID: 948966585674142767, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55.49994
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133998312303788426, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1461910802277713446, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_SizeDelta.x
       value: 129.7949
@@ -328,6 +340,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 92.78902
       objectReference: {fileID: 0}
+    - target: {fileID: 2710605512326194130, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -37.797302
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710605512326194130, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 26.758972
+      objectReference: {fileID: 0}
     - target: {fileID: 3137088744522679530, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -367,6 +387,10 @@ PrefabInstance:
     - target: {fileID: 6234176893237380484, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270687553102190560, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6713624453342874174, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -419,6 +443,10 @@ PrefabInstance:
     - target: {fileID: 7645386305936859343, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7705116795671223836, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8236367066917462499, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_Pivot.x
@@ -40020,6 +40048,11 @@ MonoBehaviour:
     CharacterSprite: {fileID: -279886113, guid: c979e72fb36ed334098a1f1509486db5, type: 3}
     sentences:
     - You reckon that'll kill the beast?
+--- !u!1 &1178161977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1133998312303788426, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+  m_PrefabInstance: {fileID: 238436152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1213634886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40486,6 +40519,18 @@ PrefabInstance:
       propertyPath: GaugeUI
       value: 
       objectReference: {fileID: 895297798}
+    - target: {fileID: 4899272620165998053, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 1178161977}
+    - target: {fileID: 4899272620165998053, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+      propertyPath: playerSprite
+      value: 
+      objectReference: {fileID: 2115053154}
+    - target: {fileID: 4899272620165998053, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 2115053154}
     - target: {fileID: 4899272620165998053, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: oxygenDecreaseRate
       value: 1
@@ -41288,6 +41333,11 @@ Transform:
   - {fileID: 1148403181}
   m_Father: {fileID: 394321456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2115053154 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4876071992765727200, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+  m_PrefabInstance: {fileID: 1580427275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3837607016368703240
 PrefabInstance:
   m_ObjectHideFlags: 0

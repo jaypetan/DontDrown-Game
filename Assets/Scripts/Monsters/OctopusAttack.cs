@@ -11,6 +11,8 @@ public class OctopusArmController : MonoBehaviour
     private float nextTime;
     private bool armUp = false;
 
+    public int enemyDamage = 10;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -52,6 +54,15 @@ public class OctopusArmController : MonoBehaviour
         animator.ResetTrigger("Rise");
         armUp = false;
         SetNextTime(); // Reset the timer for the next rise
+    }
+  
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerOxygen>().TakeDamage(enemyDamage);
+        }
+
     }
 
 }

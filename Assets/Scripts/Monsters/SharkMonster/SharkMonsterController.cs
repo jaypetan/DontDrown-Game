@@ -31,6 +31,8 @@ public class SharkMonsterController : MonoBehaviour
     private float initialSpeed; 
     private float freezeDuration = 2.0f; // Duration of the freeze in seconds
 
+    public int enemyDamage = 10;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -212,6 +214,14 @@ public class SharkMonsterController : MonoBehaviour
         segments.Clear();
 
         Destroy(tail);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerOxygen>().TakeDamage(enemyDamage);
+        }
+
     }
 }
 

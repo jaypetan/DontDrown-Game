@@ -115,7 +115,7 @@ public class Enemy : MonoBehaviour
 
     public bool CanSeePlayer()
     {
-        if (canChase)
+        if (canChase && player != null)
         {
             Vector2 toPlayer = player.transform.position - transform.position; // 2D Direction to the player
 

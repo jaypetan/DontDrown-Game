@@ -12,9 +12,18 @@ public class PlayerOxygen : MonoBehaviour
     float elapsed = 0f;
     public GaugeUI GaugeUI;
 
+    public SpriteRenderer playerSprite;
+    private Color originalColor;
+    public float colorChangeDuration = 0.5f;
+
+    public GameObject deathScreen;
+
     // Start is called before the first frame update
     public void Start()
     {
+        // Store the original color
+        originalColor = playerSprite.color;
+
         curOxygen = maxOxygen;
         SetHealth();
     }
@@ -52,11 +61,28 @@ public class PlayerOxygen : MonoBehaviour
     {
         curOxygen -= damage;
         GaugeUI.UpdateGauge(curOxygen);
+        StartCoroutine(ChangeColorTemporarily(Color.red));
         Debug.Log("Health: " + curOxygen);
 
         if (curOxygen <= 0)
         {
+            if (deathScreen != null)
+            {
+                deathScreen.SetActive(true);
+            }
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator ChangeColorTemporarily(Color color)
+    {
+        // Change to the new color
+        playerSprite.color = color;
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(colorChangeDuration);
+
+        // Revert back to the original color
+        playerSprite.color = originalColor;
     }
 }
