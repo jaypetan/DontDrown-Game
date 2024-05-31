@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BigFish_Animation_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 82
+        width: 442
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b509a5323c5ff1348b11997caf122a8e
+      internalID: -403644290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFish_Animation_1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 93
+        width: 434
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199b47831f4b79b41a1a9a53e05cf8ac
+      internalID: -158640521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFish_Animation_2
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 83
+        width: 441
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2b55969ad1c4a4a9e4df5613fda717
+      internalID: 554993795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFish_Animation_3
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 80
+        width: 423
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a6a3a8c8fcd6346a2dabdd463cf41a
+      internalID: -998594563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BigFish_Animation_0: -403644290
+      BigFish_Animation_1: -158640521
+      BigFish_Animation_2: 554993795
+      BigFish_Animation_3: -998594563
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

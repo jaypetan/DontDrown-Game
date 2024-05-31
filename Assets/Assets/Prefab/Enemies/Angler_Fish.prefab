@@ -156,10 +156,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
-  player: {fileID: 491228103510790214, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+  player: {fileID: 0}
   path: {fileID: 0}
   playerMovement: {fileID: 0}
-  sightDistance: 200
+  sightDistance: 20
   fieldOfView: 120
   maxHealth: 100
   curHealth: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   canDamage: 1
   canStun: 0
   enemyDamage: 10
-  useMovementPrediction: 0
+  useMovementPrediction: 1
   WaitDelay: 1
   MovementPredictionThreshold: 0
   MovementPredictionTime: 1
@@ -193,6 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3790023376768387565}
   - component: {fileID: 5707614375144710966}
+  - component: {fileID: 1629525149156892612}
   m_Layer: 3
   m_Name: Angler_Fish_0
   m_TagString: Untagged
@@ -210,7 +211,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1144720453129119631}
@@ -235,7 +236,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -253,17 +254,38 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 481042501
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 280602763, guid: 12c92cf870b9b834c8e3144179292343, type: 3}
+  m_Sprite: {fileID: 413946334, guid: 4ce4b7783ceca124ea47512a66e0b625, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.3899994, y: 6.303105}
+  m_Size: {x: 7.37, y: 6.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1629525149156892612
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8083738128886162709}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3064d9044dfbca945acedfc24584403d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7433211523005396044}
-  - component: {fileID: 8982989720814288213}
+  - component: {fileID: 634722503158888612}
+  - component: {fileID: 4589066955296835856}
   m_Layer: 3
   m_Name: Big Fish_0
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9056922482630606817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8982989720814288213
+--- !u!212 &634722503158888612
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,17 +74,38 @@ SpriteRenderer:
   m_SortingLayerID: 481042501
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1607525211, guid: 8de517fb9005b484fae197422fc5c728, type: 3}
+  m_Sprite: {fileID: -403644290, guid: c08242f7c05c41646be2c23968bbe3bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.4235554, y: 2.24}
+  m_Size: {x: 4.42, y: 2.2325194}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4589066955296835856
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177055237093205544}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e815ca80e57a282439912436a11a4546, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8514612038475714164
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +136,7 @@ Transform:
   m_GameObject: {fileID: 8514612038475714164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.02, y: -9.267671, z: 0}
+  m_LocalPosition: {x: -7.9, y: -20.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -213,7 +235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
+  player: {fileID: 0}
   path: {fileID: 0}
+  playerMovement: {fileID: 0}
   sightDistance: 200
   fieldOfView: 120
   maxHealth: 100
@@ -222,6 +246,10 @@ MonoBehaviour:
   canDamage: 0
   canStun: 0
   enemyDamage: 10
+  useMovementPrediction: 0
+  WaitDelay: 1
+  MovementPredictionThreshold: 0
+  MovementPredictionTime: 1
 --- !u!50 &4025240592345839012
 Rigidbody2D:
   serializedVersion: 4
