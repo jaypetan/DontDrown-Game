@@ -12,6 +12,10 @@ public class SharkMonsterHealth : MonoBehaviour
 
     public GameObject GoToEndScene;
     public GameObject CheckPoint;
+    public GameObject monsterHealthBar;
+
+    public GameObject DialogueBox;
+    public Dialogue dialogue;
 
     void Start()
     {
@@ -48,6 +52,9 @@ public class SharkMonsterHealth : MonoBehaviour
         // Handle the monster's death (e.g., play an animation, disable the GameObject, etc.)
         Destroy(gameObject);
         monsterDied = true;
+
+        monsterHealthBar.SetActive(false);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 
         SharkMonsterController sharkController = GetComponent<SharkMonsterController>();
         if (sharkController != null)

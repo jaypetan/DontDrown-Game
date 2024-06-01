@@ -23,7 +23,7 @@ public class SharkMonsterController : MonoBehaviour
     private Vector2 direction;
     public List<Transform> segments = new List<Transform>();
 
-    //For freeze 
+    //For Freeze 
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public Color freezeColor = Color.red;
@@ -32,6 +32,10 @@ public class SharkMonsterController : MonoBehaviour
     private float freezeDuration = 2.0f; // Duration of the freeze in seconds
 
     public int enemyDamage = 10;
+
+    //For Audio
+    public AudioClip attackSound;
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -44,9 +48,11 @@ public class SharkMonsterController : MonoBehaviour
             AddSegment();
         }
 
+        audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         originalColor = spriteRenderer.color;
+
     }
 
     void Update()
@@ -61,6 +67,7 @@ public class SharkMonsterController : MonoBehaviour
                 attackTimer = attackDuration;
                 isFollowing = false;
                 direction = transform.right; // Continue in the direction the enemy is facing
+                audioSource.PlayOneShot(attackSound); // Play sound
             }
         }
         else

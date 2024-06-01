@@ -10,10 +10,15 @@ public class TNTController : MonoBehaviour
     public LayerMask damageLayer; // Layer of objects that can be damaged
 
     private Animator animator;
+    
+    //For Audio
+    public AudioClip explodeSound;
+    private AudioSource audioSource;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -52,7 +57,10 @@ public class TNTController : MonoBehaviour
 
         // Destroy the TNT object after the explosion
         animator.SetTrigger("Explode");
+        audioSource.PlayOneShot(explodeSound); // Play sound
         StartCoroutine(DestroyAfterAnimation());
+
+
 
     }
     IEnumerator DestroyAfterAnimation()
