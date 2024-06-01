@@ -614,6 +614,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 881351022}
     - target: {fileID: 7755091626678416047, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+      propertyPath: cooldownDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755091626678416047, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: sanityDecreaseRate
       value: 0
       objectReference: {fileID: 0}
@@ -621,6 +625,10 @@ PrefabInstance:
       propertyPath: cooldownSlider
       value: 
       objectReference: {fileID: 881351023}
+    - target: {fileID: 7827986073897328629, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+      propertyPath: cooldownDuration
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32512,7 +32520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202ebd0bed4a1524eab491292fdbbd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityDamage: 4
+  sanityDamage: 1
   sanityCollision: {fileID: 901169066}
 --- !u!1001 &647043011
 PrefabInstance:

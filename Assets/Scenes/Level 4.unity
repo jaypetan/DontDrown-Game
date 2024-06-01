@@ -39921,7 +39921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202ebd0bed4a1524eab491292fdbbd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityDamage: 4
+  sanityDamage: 1
   sanityCollision: {fileID: 1580427276}
 --- !u!1 &781328078
 GameObject:
@@ -40823,8 +40823,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 929476075}
     - target: {fileID: 7755091626678416047, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+      propertyPath: cooldownDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755091626678416047, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: sanityDecreaseRate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7827986073897328629, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: cooldownSlider
@@ -40832,7 +40836,7 @@ PrefabInstance:
       objectReference: {fileID: 913430313}
     - target: {fileID: 7827986073897328629, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: cooldownDuration
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41577,10 +41581,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025761917}
     m_Modifications:
-    - target: {fileID: 2651566093163538380, guid: 0a0691e04e7034c43be024d566faafa5, type: 3}
-      propertyPath: explodeSound
+    - target: {fileID: 1484061664091776915, guid: 0a0691e04e7034c43be024d566faafa5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: aedf5f819377933478dbd58cfd37b319, type: 3}
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 2651566093163538380, guid: 0a0691e04e7034c43be024d566faafa5, type: 3}
       propertyPath: sharkMonster
       value: 

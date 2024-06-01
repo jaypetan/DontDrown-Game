@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 1f;
+    private float actualMoveSpeed;
     public float turnSpeed = 10f;
     public float acceleration = 1000f;
     public float speedMultiplier = 2f;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
+        actualMoveSpeed = moveSpeed;
 
         // Assuming "PlayerControls" is the name of your action map
         var actionMap = playerInput.actions.FindActionMap("PlayerControls");
@@ -61,7 +63,9 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (moveSanity.curSanity <= 80 && moveSanity.curSanity >= 61)
+        actualMoveSpeed = moveSpeed + ((100 - moveSanity.curSanity) * 0.05f);
+        
+        /*if (moveSanity.curSanity <= 80 && moveSanity.curSanity >= 61)
         {
             moveSpeed = 8f;
         } else if (moveSanity.curSanity <= 60 && moveSanity.curSanity >= 41) 
@@ -76,6 +80,7 @@ public class PlayerController : MonoBehaviour
         } else {
             moveSpeed = 6f;
         }
+        */
     }
 
     private void FixedUpdate()
@@ -88,7 +93,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 smoothDampVelocity;
     private void MoveSubmarine()
     {
-        float currentSpeed = isSpeedBoostActive ? moveSpeed * speedMultiplier : moveSpeed;
+        float currentSpeed = isSpeedBoostActive ? actualMoveSpeed * speedMultiplier : actualMoveSpeed;
 
         if (boostAction.ReadValue<float>() > 0 && !isSpeedBoostActive && !isSpeedBoostOnCooldown)
         {
