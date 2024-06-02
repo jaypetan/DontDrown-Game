@@ -17,6 +17,7 @@ public class SharkAgent : Agent
     private float sightDistance = 30f;
     private float fieldOfView = 120f;
     private float maxHealth = 100f;
+    [SerializeField]
     private float curHealth;
     private LayerMask playerLayer;
     private LayerMask torchlightLayer;
@@ -29,13 +30,16 @@ public class SharkAgent : Agent
     private float attackReward = 1.0f;
     private float torchlightPenalty = -0.2f;
 
+    private float damageTickRate = 1.0f; // Time in seconds between damage ticks
+    private float timeSinceLastDamage = 0f;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         curHealth = maxHealth;
         startPosition = transform.position;
         navMeshAgent.updateRotation = false; // Prevent automatic rotation updates
-        navMeshAgent.updateUpAxis = false;
+        navMeshAgent.updateUpAxis = false;   // Ensure the NavMeshAgent does not update the up axis
     }
 
     public override void OnEpisodeBegin()
@@ -76,27 +80,35 @@ public class SharkAgent : Agent
     private bool CanSeePlayer()
     {
         Vector2 toPlayer = player.transform.position - transform.position; // 2D Direction to the player
+        Debug.Log("Checking if can see player. ToPlayer vector: " + toPlayer);
 
         if (toPlayer.magnitude <= sightDistance)
         {
             float angleToPlayer = Vector2.Angle(transform.right, toPlayer);
+            Debug.Log("Angle to player: " + angleToPlayer);
 
             if (angleToPlayer <= fieldOfView / 2)
             {
                 int layerMask = ~(1 << LayerMask.NameToLayer("Enemy") | 1 << LayerMask.NameToLayer("Ignore Raycast"));
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, toPlayer.normalized, sightDistance, layerMask);
+                Debug.DrawRay(transform.position, toPlayer.normalized * sightDistance, Color.red);
 
                 if (hit.collider != null)
                 {
+                    Debug.Log("Raycast hit: " + hit.collider.name);
                     if (hit.collider.CompareTag("Player"))
                     {
+                        Debug.Log("Player is in sight");
                         return true;
                     }
+                }
+                else
+                {
+                    Debug.Log("Raycast did not hit any collider.");
                 }
             }
         }
 
-        Debug.DrawRay(transform.position, toPlayer.normalized * sightDistance, Color.red);
         return false;
     }
 
@@ -128,19 +140,43 @@ public class SharkAgent : Agent
             return;
         }
 
-        if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
+        // Calculate the direction and rotation to face the waypoint
+        Vector2 direction = path.waypoints[waypointIndex].position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Subtract 90 to correct for sprite orientation
+        Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 200 * Time.deltaTime);
+
+        // Set the new destination
+        if (navMeshAgent.remainingDistance < 0.5f && !navMeshAgent.pathPending)
         {
             waypointIndex = (waypointIndex + 1) % path.waypoints.Count;
             navMeshAgent.SetDestination(path.waypoints[waypointIndex].position);
             Debug.Log($"Patrolling to waypoint {waypointIndex}");
         }
+
+        if (angle > 90 || angle < -90)
+        {
+            // Flip sprite by setting localScale.y to -1
+            if (transform.localScale.y > 0)
+            {
+                transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+            }
+        }
+        else
+        {
+            // Ensure sprite is not flipped if it doesn't meet the conditions
+            if (transform.localScale.y < 0)
+            {
+                transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+            }
+        }
     }
 
     private void AttackPlayer()
     {
+        Debug.Log("Attacking player");
         navMeshAgent.SetDestination(player.transform.position);
         AddReward(attackReward);
-        Debug.Log("Attacking player");
     }
 
     private void Escape()
@@ -156,6 +192,7 @@ public class SharkAgent : Agent
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            curHealth -= 10; // Simulate damage to the shark for colliding with the player
             AddReward(attackReward);
             Debug.Log("Collided with player, ending episode");
             EndEpisode();
@@ -164,16 +201,23 @@ public class SharkAgent : Agent
 
     private void FixedUpdate()
     {
+        timeSinceLastDamage += Time.fixedDeltaTime;
+
         if (IsInTorchlight())
         {
             Debug.Log("Shark is in torchlight, taking damage");
-            TakeDamage();
+            if (timeSinceLastDamage >= damageTickRate)
+            {
+                TakeDamage();
+                timeSinceLastDamage = 0f; // Reset the timer
+            }
         }
     }
 
     private void ResetSharkPosition()
     {
         navMeshAgent.Warp(startPosition);
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Reset to default 2D rotation
         Debug.Log("Resetting shark position to " + startPosition);
     }
 
@@ -209,7 +253,5 @@ public class SharkAgent : Agent
         {
             discreteActionsOut[0] = 1; // Patrol
         }
-
-        // Debug.Log($"Heuristic action set to: {discreteActionsOut[0]}");
     }
 }
