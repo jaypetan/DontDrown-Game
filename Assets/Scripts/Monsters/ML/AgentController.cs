@@ -1,40 +1,48 @@
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class SharkAgent : Agent
 {
     public NavMeshAgent navMeshAgent;
-    public GameObject player;
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private Path path;
 
-    public Vector3 startPosition;
-
-    public float sightDistance = 200f;
-    public float fieldOfView = 120f;
-    public float maxHealth = 100f;
-    public float curHealth;
-    public LayerMask playerLayer;
-    public LayerMask torchlightLayer;
+    private Vector3 startPosition;
+    private float sightDistance = 30f;
+    private float fieldOfView = 120f;
+    private float maxHealth = 100f;
+    private float curHealth;
+    private LayerMask playerLayer;
+    private LayerMask torchlightLayer;
     private bool isInTorchlight = false;
 
+    private int waypointIndex;
+    private float waitTimer;
 
-    public float dodgeReward = 0.1f;
-    public float attackReward = 1.0f;
-    public float torchlightPenalty = -0.2f;
+    private float dodgeReward = 0.1f;
+    private float attackReward = 1.0f;
+    private float torchlightPenalty = -0.2f;
 
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player");
         curHealth = maxHealth;
         startPosition = transform.position;
+        navMeshAgent.updateRotation = false; // Prevent automatic rotation updates
+        navMeshAgent.updateUpAxis = false;
     }
 
     public override void OnEpisodeBegin()
     {
         curHealth = maxHealth;
+        ResetSharkPosition();
+        Debug.Log("Episode started, resetting shark position and health. Current Health: " + curHealth);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -48,15 +56,19 @@ public class SharkAgent : Agent
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         int action = actionBuffers.DiscreteActions[0];
+        // Debug.Log($"Action received: {action}");
         switch (action)
         {
-            case 1: // Attack
+            case 1:
+                Patrol();
+                break;
+            case 2:
                 AttackPlayer();
                 break;
-            case 2: // Dodge
-                DodgeTorchlight();
+            case 3:
+                Escape();
                 break;
-            default: // Do nothing
+            default:
                 break;
         }
     }
@@ -65,36 +77,30 @@ public class SharkAgent : Agent
     {
         Vector2 toPlayer = player.transform.position - transform.position; // 2D Direction to the player
 
-        // Check if within sight distance using 2D distance calculation
         if (toPlayer.magnitude <= sightDistance)
         {
-            // Calculate angle to see if within field of view using transform.right as the forward vector in 2D
             float angleToPlayer = Vector2.Angle(transform.right, toPlayer);
 
-            if (angleToPlayer <= fieldOfView / 2) // Check if within field of view
+            if (angleToPlayer <= fieldOfView / 2)
             {
-                int layerMask = 1 << LayerMask.NameToLayer("Enemy") | 1 << LayerMask.NameToLayer("Ignore Raycast");
-                layerMask = ~layerMask; // Invert the layerMask to ignore Enemy and Checkpoint layers
+                int layerMask = ~(1 << LayerMask.NameToLayer("Enemy") | 1 << LayerMask.NameToLayer("Ignore Raycast"));
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, toPlayer.normalized, sightDistance, layerMask);
-
 
                 if (hit.collider != null)
                 {
-                    // Debug.Log($"Hit: {hit.collider.gameObject.name}");
                     if (hit.collider.CompareTag("Player"))
                     {
-                        // Debug.Log("Player Spotted");
                         return true;
                     }
                 }
             }
         }
 
-        Debug.DrawRay(transform.position, toPlayer.normalized * sightDistance, Color.red); // Use for debugging
-        return false; // Player is not within sight
+        Debug.DrawRay(transform.position, toPlayer.normalized * sightDistance, Color.red);
+        return false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Torchlight"))
         {
@@ -102,7 +108,7 @@ public class SharkAgent : Agent
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Torchlight"))
         {
@@ -115,34 +121,44 @@ public class SharkAgent : Agent
         return isInTorchlight;
     }
 
+    private void Patrol()
+    {
+        if (path == null || path.waypoints.Count == 0)
+        {
+            return;
+        }
+
+        if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
+        {
+            waypointIndex = (waypointIndex + 1) % path.waypoints.Count;
+            navMeshAgent.SetDestination(path.waypoints[waypointIndex].position);
+            Debug.Log($"Patrolling to waypoint {waypointIndex}");
+        }
+    }
+
     private void AttackPlayer()
     {
-        // Logic for attacking the player
-        if (CanSeePlayer())
-        {
-            // Move towards the player
-            navMeshAgent.SetDestination(player.transform.position);
-            AddReward(attackReward);
-        }
+        navMeshAgent.SetDestination(player.transform.position);
+        AddReward(attackReward);
+        Debug.Log("Attacking player");
     }
 
-    private void DodgeTorchlight()
+    private void Escape()
     {
-        // Logic for dodging torchlight
-        if (IsInTorchlight())
-        {
-            // Move away from the torchlight source or to a safe position
-            // This would require knowing where the torchlight is coming from
-            AddReward(dodgeReward);
-        }
+        Vector2 escapeDirection = transform.position - player.transform.position;
+        Vector2 escapePosition = (Vector2)transform.position + escapeDirection.normalized * sightDistance;
+        navMeshAgent.SetDestination(escapePosition);
+        AddReward(dodgeReward);
+        Debug.Log("Escaping from torchlight");
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            AddReward(attackReward); // Reward for colliding with the player (attacking)
-            EndEpisode(); // End the episode if the attack is considered a terminal state
+            AddReward(attackReward);
+            Debug.Log("Collided with player, ending episode");
+            EndEpisode();
         }
     }
 
@@ -150,30 +166,50 @@ public class SharkAgent : Agent
     {
         if (IsInTorchlight())
         {
-            TakeDamage(); // Apply damage if in torchlight
+            Debug.Log("Shark is in torchlight, taking damage");
+            TakeDamage();
         }
     }
 
     private void ResetSharkPosition()
     {
-        navMeshAgent.Warp(startPosition); // Resets the position to the start
+        navMeshAgent.Warp(startPosition);
+        Debug.Log("Resetting shark position to " + startPosition);
     }
 
     private void TakeDamage()
     {
-        curHealth -= 10; // Subtract some damage value
+        curHealth -= 10;
         AddReward(torchlightPenalty);
+        Debug.Log("Taking damage, current health: " + curHealth);
 
         if (curHealth <= 0)
         {
+            Debug.Log("Health dropped to zero, ending episode");
             ResetSharkPosition();
-            curHealth = maxHealth; // Reset health for next episode or continuation
-            EndEpisode(); // End the episode if health is zero
+            curHealth = maxHealth;
+            SetReward(-10);
+            EndEpisode();
         }
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        // Implement heuristic logic here for manual control if needed
+        var discreteActionsOut = actionsOut.DiscreteActions;
+
+        if (CanSeePlayer())
+        {
+            discreteActionsOut[0] = 2; // Attack
+        }
+        else if (curHealth < maxHealth * 0.3f)
+        {
+            discreteActionsOut[0] = 3; // Escape
+        }
+        else
+        {
+            discreteActionsOut[0] = 1; // Patrol
+        }
+
+        // Debug.Log($"Heuristic action set to: {discreteActionsOut[0]}");
     }
 }
