@@ -53,6 +53,10 @@ public class PlayerOxygen : MonoBehaviour
 
         if (curOxygen <= 0)
         {
+            if (deathScreen != null)
+            {
+                deathScreen.SetActive(true);
+            }
             Destroy(gameObject);
         }
     }
