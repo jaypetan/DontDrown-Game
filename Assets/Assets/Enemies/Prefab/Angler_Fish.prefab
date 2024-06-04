@@ -114,12 +114,12 @@ PolygonCollider2D:
       - {x: -1.6725512, y: -0.29502508}
       - {x: -0.62134355, y: -0.7586802}
       - {x: 0.4252081, y: -1.5136995}
-      - {x: 1.8141832, y: -1.6266689}
-      - {x: 2.668372, y: -1.0774801}
+      - {x: 1.5078402, y: -1.4160557}
+      - {x: 2.09397, y: -0.92430663}
       - {x: 1.115737, y: -0.39234352}
       - {x: 1.0770264, y: 0.1587801}
-      - {x: 2.6146536, y: 0.8817291}
-      - {x: 2.1019802, y: 1.4128866}
+      - {x: 2.0785437, y: 0.63282204}
+      - {x: 1.6807461, y: 1.2980065}
       - {x: 0.81682396, y: 1.3157516}
   m_UseDelaunayMesh: 0
 --- !u!195 &5814258520928693464
@@ -218,8 +218,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.751, y: 1.3120999, z: 0}
-    m_Extent: {x: 1.2540001, y: 1.2251, z: 0}
+    m_Center: {x: 1.75045, y: 1.31215, z: 0}
+    m_Extent: {x: 1.25415, y: 1.2249501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -279,7 +279,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1144720453129119631}
