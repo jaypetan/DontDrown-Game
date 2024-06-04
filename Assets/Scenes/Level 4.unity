@@ -39960,7 +39960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857783031}
   m_Layer: 0
-  m_Name: Restriction Blocks
+  m_Name: Restriction Blocks Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41578,7 +41578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080041651}
   m_Layer: 0
-  m_Name: CheckPoints
+  m_Name: CheckPoints Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
