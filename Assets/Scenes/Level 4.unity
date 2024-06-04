@@ -40667,7 +40667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Monster
+  m_text: ABYSSOTH
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -40694,8 +40694,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -40760,6 +40760,10 @@ PrefabInstance:
       propertyPath: GaugeUI
       value: 
       objectReference: {fileID: 895297798}
+    - target: {fileID: 4899272620165998053, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
+      propertyPath: maxOxygen
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4899272620165998053, guid: f17698e0addb85b4a808cdcb1bf40afd, type: 3}
       propertyPath: deathScreen
       value: 
@@ -41452,11 +41456,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueBox: {fileID: 1134088148}
   dialogue:
-    name: Nevel
-    CharacterSprite: {fileID: 1649548430, guid: 1d6cb7489128fd14a9f90a411c6540b7, type: 3}
+    name: Candace
+    CharacterSprite: {fileID: 524342139, guid: f1f70edc76c325e49b9aa895a4840661, type: 3}
     sentences:
-    - That's the chest!
-    - But lets deal with this monster first!
+    - That's the chest! But lets deal with this monster first!
 --- !u!1 &2025761916
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class collid : MonoBehaviour
+public class CheckPoint : MonoBehaviour
 {
     [SerializeField]
     private Text checkpointMessage;
