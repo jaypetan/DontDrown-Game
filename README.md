@@ -1,5 +1,5 @@
 # Dont Drown
-a thrilling 2D side-scroller game created in Unity 
+A thrilling 2D side-scroller game created in Unity 
 
 # Storyline: 
 You play as an driver controlling a subamrine \
