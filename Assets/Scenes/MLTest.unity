@@ -20650,6 +20650,9 @@ MonoBehaviour:
   navMeshAgent: {fileID: 0}
   player: {fileID: 0}
   path: {fileID: 0}
+  torch: {fileID: 0}
+  sightDistance: 10
+  fieldOfView: 200
   curHealth: 0
 --- !u!114 &1553994898
 MonoBehaviour:
@@ -20958,11 +20961,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2121159729709834682, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2121159729709834682, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2148133126439935454, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_SizeDelta.x
@@ -20974,11 +20977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172199830187744071, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172199830187744071, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2206658590193480823, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -20995,6 +20998,10 @@ PrefabInstance:
     - target: {fileID: 2578752335792969713, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_Name
       value: Player Interface
+      objectReference: {fileID: 0}
+    - target: {fileID: 2578752335792969713, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2578752335792969713, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21086,11 +21093,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6927374688251484884, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6927374688251484884, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7039582462969222919, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -21222,11 +21229,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8723128396797883071, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8723128396797883071, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9095736100833428720, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21990,8 +21997,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.35575, y: -0.008599997, z: 0}
-    m_Extent: {x: 3.5261497, y: 1.2303, z: 0}
+    m_Center: {x: 1.3548, y: -0.008750021, z: 0}
+    m_Extent: {x: 3.5258, y: 1.23125, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -22334,6 +22341,9 @@ MonoBehaviour:
   navMeshAgent: {fileID: 6089559016469901540}
   player: {fileID: 491228105121171388}
   path: {fileID: 579640033}
+  torch: {fileID: 8939968844110182106}
+  sightDistance: 10
+  fieldOfView: 200
   curHealth: 0
 --- !u!114 &8762795473449698963
 MonoBehaviour:
@@ -22348,7 +22358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 4
+    VectorObservationSize: 5
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -22379,7 +22389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Record: 1
   NumStepsToRecord: 0
-  DemonstrationName: SharkAgentDemo
+  DemonstrationName: SharkAgent
   DemonstrationDirectory: Demos
 --- !u!114 &8762795473449698965
 MonoBehaviour:
