@@ -33298,9 +33298,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2343581723599392073, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2578752335792969713, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_Name
       value: Player Interface
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744260632647121810, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00030517578
       objectReference: {fileID: 0}
     - target: {fileID: 6051873811595043279, guid: 6acac825338ccac47970ff2c83b0adeb, type: 3}
       propertyPath: m_Sprite
