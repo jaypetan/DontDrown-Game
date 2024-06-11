@@ -31,17 +31,22 @@ public class SharkAgent : Agent
     private int waypointIndex;
     private float waitTimer;
 
-    private float dodgeReward = 1f;
-    private float attackReward = 5f;
+    [SerializeField]
+    private float surviveEverySecondReward = 0.5f;
+    [SerializeField]
     private float torchlightReward= -0.5f;
-    private float deathReward = -100f;
+    [SerializeField]
+    private float deathReward = -50f;
+    [SerializeField]
     private float hitPlayerRewards = 10f;
+    [SerializeField]
     private float patrolReward = 1f;
 
     private float damageTickRate = 0.5f; // Time in seconds between damage ticks
     private float timeSinceLastDamage = 0f;
     private float timeSinceLastAttack = 0f;
     private float AttackRate = 0.5f;
+    private float timer = 0f;
 
     private void Awake()
     {
@@ -188,33 +193,35 @@ public class SharkAgent : Agent
 
     private void AttackPlayer()
     {
-        Debug.Log("Attacking player");
-        navMeshAgent.SetDestination(player.transform.position);
-
-        // Calculate the direction and rotation to face the waypoint
-        Vector2 direction = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Subtract 90 to correct for sprite orientation
-        Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 200 * Time.deltaTime);
-
-        if (angle > 90 || angle < -90)
+        if (CanSeePlayer())
         {
-            // Flip sprite by setting localScale.y to -1
-            if (transform.localScale.y > 0)
+            Debug.Log("Attacking player");
+            navMeshAgent.SetDestination(player.transform.position);
+
+            // Calculate the direction and rotation to face the waypoint
+            Vector2 direction = player.transform.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Subtract 90 to correct for sprite orientation
+            Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 200 * Time.deltaTime);
+
+            if (angle > 90 || angle < -90)
             {
-                transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+                // Flip sprite by setting localScale.y to -1
+                if (transform.localScale.y > 0)
+                {
+                    transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+                }
+            }
+            else
+            {
+                // Ensure sprite is not flipped if it doesn't meet the conditions
+                if (transform.localScale.y < 0)
+                {
+                    transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+                }
             }
         }
-        else
-        {
-            // Ensure sprite is not flipped if it doesn't meet the conditions
-            if (transform.localScale.y < 0)
-            {
-                transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
-            }
-        }
-
-        AddReward(attackReward);
+        
     }
 
     private void Escape()
@@ -222,7 +229,6 @@ public class SharkAgent : Agent
         Vector2 escapeDirection = transform.position - player.transform.position;
         Vector2 escapePosition = (Vector2)transform.position + escapeDirection.normalized * sightDistance;
         navMeshAgent.SetDestination(escapePosition);
-        AddReward(dodgeReward);
         curHealth += Time.deltaTime * 15;
         Debug.Log("Escaping from torchlight");
     }
@@ -255,6 +261,13 @@ public class SharkAgent : Agent
                 TakeDamage();
                 timeSinceLastDamage = 0f; // Reset the timer
             }
+        }
+
+        timer += Time.fixedDeltaTime;
+        if(timer >= 1)
+        {
+            AddReward(surviveEverySecondReward);
+            timer = 0;
         }
     }
 
