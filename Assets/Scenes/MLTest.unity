@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 896454741788418029, guid: d9ff1d544d353eb428bb9714e49b3814, type: 3}
       propertyPath: Record
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2937477735234031101, guid: d9ff1d544d353eb428bb9714e49b3814, type: 3}
       propertyPath: m_Name
@@ -178,6 +178,18 @@ PrefabInstance:
     - target: {fileID: 4729725674648479554, guid: d9ff1d544d353eb428bb9714e49b3814, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792146531925236730, guid: d9ff1d544d353eb428bb9714e49b3814, type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792146531925236730, guid: d9ff1d544d353eb428bb9714e49b3814, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792146531925236730, guid: d9ff1d544d353eb428bb9714e49b3814, type: 3}
+      propertyPath: m_Acceleration
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

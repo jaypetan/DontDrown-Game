@@ -973,7 +973,6 @@ GameObject:
   - component: {fileID: 5255049409979657248}
   - component: {fileID: 2729939680670502792}
   - component: {fileID: 6426406788228386373}
-  - component: {fileID: 5934807973533175332}
   - component: {fileID: 5792146531925236730}
   - component: {fileID: 2153509191362598981}
   - component: {fileID: 9061092747161638494}
@@ -1100,18 +1099,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5934807973533175332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784817526893107922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb62c7c68e8c4b44b70db94b6acc8a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &5792146531925236730
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1187,8 +1174,7 @@ MonoBehaviour:
   sightDistance: 10
   fieldOfView: 200
   curHealth: 0
-  dodgeReward: 1
-  attackReward: 5
+  surviveEverySecondReward: 0.5
   torchlightReward: -0.5
   deathReward: -50
   hitPlayerRewards: 10

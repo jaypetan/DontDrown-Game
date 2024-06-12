@@ -44,9 +44,12 @@ public class SharkAgent : Agent
 
     private float damageTickRate = 0.5f; // Time in seconds between damage ticks
     private float timeSinceLastDamage = 0f;
-    private float timeSinceLastAttack = 0f;
+    private float timeSinceLastAttack = 0.5f;
     private float AttackRate = 0.5f;
     private float timer = 0f;
+
+    [SerializeField]
+    private int attackCount = 0;
 
     private void Awake()
     {
@@ -60,6 +63,7 @@ public class SharkAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        attackCount = 0;
         curHealth = maxHealth;
         ResetSharkPosition();
         Debug.Log("Episode started, resetting shark position and health. Current Health: " + curHealth);
@@ -195,7 +199,7 @@ public class SharkAgent : Agent
     {
         if (CanSeePlayer())
         {
-            Debug.Log("Attacking player");
+            // Debug.Log("Attacking player");
             navMeshAgent.SetDestination(player.transform.position);
 
             // Calculate the direction and rotation to face the waypoint
@@ -233,18 +237,24 @@ public class SharkAgent : Agent
         Debug.Log("Escaping from torchlight");
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            timeSinceLastAttack += Time.deltaTime;
-            AddReward(hitPlayerRewards);
             if (timeSinceLastAttack >= AttackRate)
             {
-                Debug.Log("Collided with player 10 times, ending episode");
-                timeSinceLastAttack = 0f;
-                EndEpisode();
-
+                if (attackCount >= 10)
+                {
+                    Debug.Log("Collided with player 10 times, ending episode");
+                    EndEpisode();
+                }
+                else
+                {
+                    Debug.Log("Collided");
+                    AddReward(hitPlayerRewards);
+                    attackCount++;
+                    timeSinceLastAttack = 0f;
+                }
             }
         }
     }
@@ -252,6 +262,7 @@ public class SharkAgent : Agent
     private void FixedUpdate()
     {
         timeSinceLastDamage += Time.fixedDeltaTime;
+        timeSinceLastAttack += Time.fixedDeltaTime;
 
         if (IsInTorchlight())
         {
