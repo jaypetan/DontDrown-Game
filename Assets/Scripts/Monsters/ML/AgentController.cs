@@ -36,7 +36,7 @@ public class SharkAgent : Agent
     [SerializeField]
     private float torchlightReward= -0.5f;
     [SerializeField]
-    private float deathReward = -50f;
+    private float deathReward = -100f;
     [SerializeField]
     private float hitPlayerRewards = 10f;
     [SerializeField]
@@ -51,6 +51,9 @@ public class SharkAgent : Agent
     [SerializeField]
     private int attackCount = 0;
 
+    public bool isSpeedBoost;
+    public PlayerController playerController;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -59,6 +62,7 @@ public class SharkAgent : Agent
         playerStartPosition = player.transform.position;
         navMeshAgent.updateRotation = false; // Prevent automatic rotation updates
         navMeshAgent.updateUpAxis = false;   // Ensure the NavMeshAgent does not update the up axis
+        isSpeedBoost = playerController.isSpeedBoostActive;
     }
 
     public override void OnEpisodeBegin()
@@ -76,6 +80,7 @@ public class SharkAgent : Agent
         sensor.AddObservation(curHealth / maxHealth); // Normalized health
         sensor.AddObservation(CanSeePlayer() ? 1.0f : 0.0f); // Player visibility
         sensor.AddObservation(IsInTorchlight() ? 1.0f : 0.0f); // Whether the shark is in torchlight
+        sensor.AddObservation(isSpeedBoost);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -261,6 +266,8 @@ public class SharkAgent : Agent
 
     private void FixedUpdate()
     {
+        isSpeedBoost = playerController.isSpeedBoostActive;
+
         timeSinceLastDamage += Time.fixedDeltaTime;
         timeSinceLastAttack += Time.fixedDeltaTime;
 
@@ -280,6 +287,8 @@ public class SharkAgent : Agent
             AddReward(surviveEverySecondReward);
             timer = 0;
         }
+
+
     }
 
     private void ResetSharkPosition()
@@ -302,7 +311,7 @@ public class SharkAgent : Agent
             Debug.Log("Health dropped to zero, ending episode");
             ResetSharkPosition();
             curHealth = maxHealth;
-            SetReward(deathReward);
+            AddReward(deathReward);
             EndEpisode();
         }
     }
