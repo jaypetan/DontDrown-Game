@@ -13,5 +13,4 @@ Fight the final boss and claim the treasure within the deepest parts of trechero
 
 ![image](https://github.com/jaypetan/DontDrown-Game/assets/152462664/2b02fdac-6085-433f-8b33-e94b37c55029)
 
-
-##  Downlaod the game [HERE](https://github.com/jaypetan/DontDrown-Game/raw/main/SubmarineGame.exe) 
+ 
